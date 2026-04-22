@@ -1,0 +1,1 @@
+# Strategic-Management-Full-Note-All-15-Weeks
