@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGT 6301 – Strategic Management | Complete Study Notes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+:root{
+  --navy:#1a2340;--gold:#c9a84c;--cream:#fdf8f0;--blue:#2563eb;--lbl:#eff6ff;
+  --green:#166534;--lgreen:#f0fdf4;--red:#991b1b;--lred:#fef2f2;
+  --purple:#5b21b6;--lpurple:#f5f3ff;--orange:#c2410c;--lorange:#fff7ed;
+  --gray:#374151;--lgray:#f9fafb;--border:#e5e7eb;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--gray);font-size:14px;line-height:1.65;}
+
+/* FLOATING BUTTONS */
+.float-btn{
+  position:fixed;z-index:9999;width:44px;height:44px;border-radius:50%;
+  border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(0,0,0,0.25);transition:opacity .3s,transform .3s;
+  opacity:0;pointer-events:none;
+}
+.float-btn.visible{opacity:1;pointer-events:all;}
+#btn-top{bottom:80px;right:16px;background:var(--navy);color:var(--gold);}
+#btn-bot{bottom:28px;right:16px;background:var(--gold);color:var(--navy);}
+.float-btn:hover{transform:scale(1.12);}
+
+/* COVER */
+.cover{background:var(--navy);color:white;padding:50px 20px 40px;text-align:center;border-bottom:5px solid var(--gold);position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(201,168,76,.08);}
+.cover-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:18px;}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,38px);font-weight:900;line-height:1.15;margin-bottom:8px;}
+.cover h2{font-size:clamp(14px,3vw,18px);font-weight:300;color:rgba(255,255,255,.75);margin-bottom:28px;}
+.cover-meta{display:flex;justify-content:center;gap:20px;font-size:12px;color:rgba(255,255,255,.6);flex-wrap:wrap;}
+
+/* CONTAINERS */
+.container{max-width:960px;margin:0 auto;padding:0 16px;}
+.section{background:white;border-radius:12px;padding:clamp(18px,4vw,32px);margin:18px 16px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.06);}
+
+/* SECTION HEADER */
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid var(--gold);flex-wrap:wrap;}
+.week-badge{background:var(--navy);color:var(--gold);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;letter-spacing:1px;}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(18px,4vw,24px);color:var(--navy);line-height:1.2;}
+
+/* CARDS */
+.card{border-radius:8px;padding:16px 18px;margin:12px 0;border-left:4px solid;}
+.card-blue{background:var(--lbl);border-color:var(--blue);}
+.card-green{background:var(--lgreen);border-color:#16a34a;}
+.card-red{background:var(--lred);border-color:#dc2626;}
+.card-purple{background:var(--lpurple);border-color:#7c3aed;}
+.card-orange{background:var(--lorange);border-color:#ea580c;}
+.card-gold{background:#fffbeb;border-color:var(--gold);}
+.card-navy{background:#eef0f5;border-color:var(--navy);}
+.card h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;color:var(--navy);}
+.card h4{font-size:13px;font-weight:600;color:var(--navy);margin:10px 0 5px;}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:12px 0;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0;}
+@media(max-width:640px){
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .sn-grid{grid-template-columns:1fr!important;}
+}
+
+/* HEADINGS */
+h3{font-size:15px;font-weight:700;color:var(--navy);margin:16px 0 8px;}
+h4{font-size:13px;font-weight:600;color:var(--gray);margin:10px 0 5px;}
+p{font-size:13.5px;margin:7px 0;}
+ul,ol{padding-left:20px;}
+li{margin:4px 0;font-size:13.5px;}
+li strong{color:var(--navy);}
+.highlight{background:#fef9c3;padding:1px 4px;border-radius:3px;font-weight:600;}
+.divider{height:2px;background:linear-gradient(to right,var(--navy),var(--gold),transparent);margin:8px 0 14px;}
+
+/* EXAM TIP */
+.exam-tip{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px solid var(--gold);border-radius:10px;padding:13px 16px;margin:14px 0;font-size:13px;}
+.exam-tip::before{content:'⭐ EXAM TIP: ';font-weight:700;color:#92400e;}
+
+/* TABLES */
+.tbl{border-collapse:collapse;width:100%;font-size:12.5px;margin:12px 0;}
+.tbl th{background:var(--navy);color:white;padding:8px 10px;text-align:left;font-weight:600;font-size:12px;}
+.tbl td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f8fafc;}
+.tbl .rh{background:var(--navy);color:white;font-weight:600;font-size:12px;text-align:center;}
+/* mobile scroll tables */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+
+/* TOC */
+.toc{background:white;border:2px solid var(--navy);border-radius:12px;padding:24px;margin:18px 16px;}
+.toc h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--gold);}
+.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px 24px;}
+@media(max-width:480px){.toc-grid{grid-template-columns:1fr;}}
+.toc-item{font-size:12.5px;color:var(--blue);text-decoration:none;padding:4px 0;border-bottom:1px dotted #ddd;display:flex;align-items:baseline;gap:7px;}
+.toc-item:hover{color:var(--navy);text-decoration:underline;}
+.toc-num{font-weight:700;color:var(--navy);min-width:26px;font-size:11px;}
+
+/* ═══════════ DIAGRAMS ═══════════ */
+
+/* PYRAMID */
+.pyramid-wrap{margin:14px auto;max-width:420px;text-align:center;}
+.pyr-row{display:flex;justify-content:center;margin:3px 0;}
+.pyr-blk{color:white;font-size:12px;font-weight:600;padding:9px 14px;border-radius:4px;line-height:1.3;text-align:center;}
+
+/* PORTER'S FIVE FORCES */
+.ff-diagram{display:grid;grid-template-columns:1fr 1.1fr 1fr;grid-template-rows:auto auto auto;gap:8px;margin:14px 0;max-width:560px;margin-left:auto;margin-right:auto;}
+.ff-box{background:var(--navy);color:white;border-radius:8px;padding:12px 10px;font-size:11.5px;font-weight:600;text-align:center;line-height:1.4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.ff-center{background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;}
+.ff-empty{background:transparent!important;}
+.ff-arrow{font-size:14px;display:block;}
+@media(max-width:480px){
+  .ff-diagram{grid-template-columns:1fr;grid-template-rows:none;}
+  .ff-empty{display:none;}
+}
+
+/* ANSOFF MATRIX */
+.ansoff-wrap{margin:14px 0;overflow-x:auto;}
+.ansoff{border-collapse:collapse;width:100%;min-width:320px;}
+.ansoff th{background:var(--navy);color:white;padding:9px;text-align:center;font-size:12px;}
+.ansoff td{border:2px solid white;padding:14px;text-align:center;font-size:12.5px;font-weight:500;vertical-align:top;}
+
+/* BCG MATRIX */
+.bcg-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4px;max-width:360px;margin:12px auto;}
+.bcg-cell{padding:14px;border-radius:6px;text-align:center;font-size:12.5px;font-weight:600;line-height:1.4;}
+
+/* VALUE CHAIN */
+.vc-wrap{margin:14px 0;overflow-x:auto;}
+.vc-support{background:#dbeafe;border:1px solid #93c5fd;border-radius:8px 8px 0 0;padding:12px 14px;min-width:320px;}
+.vc-prim{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #93c5fd;border-top:none;border-radius:0 0 8px 8px;overflow:hidden;min-width:320px;}
+.vc-act{background:var(--navy);color:white;padding:11px 8px;text-align:center;font-size:11px;font-weight:600;border-right:2px solid #1e3a5f;line-height:1.3;}
+.vc-act:last-child{border-right:none;}
+.vc-srow{display:flex;gap:5px;flex-wrap:wrap;margin:5px 0;}
+.vc-sitem{background:rgba(255,255,255,.7);border:1px solid #93c5fd;border-radius:4px;padding:3px 9px;font-size:11.5px;color:var(--navy);font-weight:500;}
+
+/* BALANCED SCORECARD */
+.bsc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.bsc-cell{border-radius:8px;padding:12px;border:2px solid;}
+.bsc-fin{background:#ecfdf5;border-color:#16a34a;}
+.bsc-cust{background:#eff6ff;border-color:#2563eb;}
+.bsc-int{background:#fdf4ff;border-color:#9333ea;}
+.bsc-learn{background:#fff7ed;border-color:#ea580c;}
+.bsc-center{background:var(--navy);color:white;border-radius:8px;padding:12px;text-align:center;font-weight:700;font-size:13px;grid-column:1/-1;margin-top:8px;}
+@media(max-width:480px){.bsc-grid{grid-template-columns:1fr;}}
+
+/* TYPES OF CHANGE 2x2 */
+.change-2x2{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:12px 0;border:2px solid var(--navy);border-radius:8px;overflow:hidden;}
+.ch-header{background:var(--navy);color:white;font-size:11px;font-weight:700;padding:6px;text-align:center;}
+.ch-cell{padding:12px;font-size:12.5px;line-height:1.4;}
+.ch-adapt{background:#dcfce7;}
+.ch-evol{background:#dbeafe;}
+.ch-recon{background:#fef9c3;}
+.ch-revol{background:#fee2e2;}
+
+/* LEWIN */
+.lewin{display:flex;gap:0;margin:14px 0;overflow-x:auto;}
+.lewin-step{flex:1;min-width:120px;padding:14px 10px;text-align:center;}
+.lewin-step h4{font-size:12.5px;margin-bottom:6px;}
+.lewin-step p{font-size:11.5px;}
+.lewin-arr{display:flex;align-items:center;font-size:22px;color:var(--gold);padding:0 4px;}
+.lewin-1{background:#fee2e2;border-radius:8px 0 0 8px;}
+.lewin-2{background:#dbeafe;}
+.lewin-3{background:#dcfce7;border-radius:0 8px 8px 0;}
+
+/* KOTTER */
+.kotter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0;}
+@media(max-width:560px){.kotter-grid{grid-template-columns:repeat(2,1fr);}}
+.kotter-step{background:var(--navy);color:white;border-radius:8px;padding:10px;font-size:11.5px;text-align:center;line-height:1.3;}
+.kotter-step .snum{font-size:18px;font-weight:900;color:var(--gold);display:block;}
+
+/* PORTER'S DIAMOND */
+.diamond-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:8px;margin:12px 0;max-width:500px;margin-left:auto;margin-right:auto;}
+.dia-box{background:var(--navy);color:white;border-radius:8px;padding:12px 10px;font-size:11.5px;text-align:center;line-height:1.4;}
+.dia-center{background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;}
+.dia-empty{background:transparent!important;}
+
+/* STRATEGY CLOCK */
+.clock-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;}
+.clock-zone{border-radius:8px;padding:12px;border:2px solid;}
+.cz-diff{background:#eff6ff;border-color:#2563eb;}
+.cz-low{background:#f0fdf4;border-color:#16a34a;}
+.cz-hybrid{background:#fffbeb;border-color:var(--gold);}
+.cz-non{background:#fef2f2;border-color:#dc2626;}
+
+/* DELIBERATE vs EMERGENT */
+.de-table{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--navy);border-radius:8px;overflow:hidden;margin:14px 0;}
+.de-header{background:var(--navy);color:white;font-weight:700;padding:10px;text-align:center;font-size:13px;}
+.de-cell{padding:10px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);font-size:12.5px;}
+.de-cell:nth-child(even){border-right:none;}
+.de-label{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--navy);letter-spacing:.5px;display:block;margin-bottom:3px;}
+
+/* QUICK REVISION SECTION */
+.qr-section{background:linear-gradient(135deg,var(--navy),#2d3a5a);color:white;border-radius:12px;padding:clamp(18px,4vw,28px);margin:18px 16px;}
+.qr-section h2{font-family:'Playfair Display',serif;font-size:clamp(18px,4vw,24px);color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.4);}
+.qr-section h3{color:var(--gold);font-size:13px;margin:14px 0 8px;}
+.qr-section li{color:rgba(255,255,255,.9);font-size:12.5px;margin:4px 0;}
+.qr-section a{color:#93c5fd;text-decoration:underline dotted;font-size:12.5px;}
+.qr-section a:hover{color:var(--gold);}
+.sn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.sn-box{background:rgba(255,255,255,.08);border-radius:8px;padding:14px;border:1px solid rgba(201,168,76,.3);}
+.sn-box p{color:rgba(255,255,255,.85);font-size:12.5px;}
+
+/* FRAMEWORKS INDEX */
+.fw-index{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:12px 0;}
+@media(max-width:480px){.fw-index{grid-template-columns:1fr;}}
+.fw-item{background:rgba(255,255,255,.1);border-radius:6px;padding:9px 12px;border:1px solid rgba(201,168,76,.2);}
+.fw-item a{color:#93c5fd;text-decoration:none;font-weight:600;font-size:12.5px;display:block;}
+.fw-item a:hover{color:var(--gold);}
+.fw-item p{color:rgba(255,255,255,.7);font-size:11px;margin-top:3px;}
+
+/* 3-DAY PLAN */
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0;}
+@media(max-width:560px){.plan-grid{grid-template-columns:1fr;}}
+.plan-box{background:rgba(255,255,255,.1);border-radius:8px;padding:12px;border:1px solid rgba(201,168,76,.3);}
+.plan-box h3{color:var(--gold);font-size:13px;margin-bottom:8px;}
+.plan-box li{font-size:12px;color:rgba(255,255,255,.85);margin:3px 0;}
+
+/* SHORT NOTE in QR */
+.sn-week{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.1);align-items:flex-start;}
+.sn-wlabel{background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;margin-top:2px;}
+.sn-wcontent{font-size:12px;color:rgba(255,255,255,.85);flex:1;}
+
+/* ENTRY MODES */
+.entry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0;}
+@media(max-width:560px){.entry-grid{grid-template-columns:repeat(2,1fr);}}
+.entry-box{border-radius:8px;padding:10px;text-align:center;font-size:12px;}
+
+/* ANSWER FRAMEWORKS */
+.af-box{background:white;border:2px solid var(--navy);border-radius:10px;padding:18px;margin:12px 0;}
+.af-box h4{color:var(--navy);font-size:14px;font-weight:700;margin-bottom:10px;border-bottom:2px solid var(--gold);padding-bottom:6px;}
+.af-step{display:flex;gap:10px;margin:6px 0;align-items:flex-start;}
+.af-num{background:var(--navy);color:white;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.af-text{font-size:12.5px;flex:1;}
+
+/* KEY DEFINITIONS */
+.def-item{border-bottom:1px solid var(--border);padding:10px 0;}
+.def-term{font-weight:700;color:var(--navy);font-size:13.5px;}
+.def-def{font-size:13px;color:var(--gray);margin-top:3px;}
+.def-src{font-size:11px;color:#6b7280;font-style:italic;margin-top:2px;}
+
+/* MCQ GUIDE */
+.mcq-item{padding:10px 12px;border-radius:8px;margin:6px 0;background:var(--lgray);border-left:3px solid var(--navy);}
+.mcq-q{font-size:13px;font-weight:600;color:var(--navy);}
+.mcq-a{font-size:12.5px;color:#16a34a;font-weight:700;margin:3px 0;}
+.mcq-r{font-size:12px;color:#6b7280;font-style:italic;}
+
+/* FINAL ADVICE */
+.advice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:12px 0;}
+@media(max-width:480px){.advice-grid{grid-template-columns:1fr;}}
+.advice-box{border-radius:8px;padding:14px;border:2px solid;}
+
+</style>
+</head>
+<body id="top">
+
+<!-- FLOATING BUTTONS -->
+<button class="float-btn" id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Go to Top">▲</button>
+<button class="float-btn" id="btn-bot" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="Go to Bottom">▼</button>
+<script>
+window.addEventListener('scroll',function(){
+  var s=window.scrollY>200;
+  document.getElementById('btn-top').classList.toggle('visible',s);
+  document.getElementById('btn-bot').classList.toggle('visible',s);
+});
+</script>
+
+<!-- COVER -->
+<div class="cover" id="cover">
+  <div class="cover-badge">MBA · Postgraduate Unit · University of Peradeniya</div>
+  <h1>MGT 6301<br>Strategic Management</h1>
+  <h2>Complete Exam Study Notes — All 15 Weeks · Updated Edition</h2>
+  <div class="cover-meta">
+    <span>📚 Weeks 1–15 Full Content</span>
+    <span>🎯 2019–2024 Past Papers Analyzed</span>
+    <span>📱 Mobile Optimized</span>
+    <span>🔗 Hyperlinked Navigation</span>
+  </div>
+</div>
+
+<!-- ★ QUICK REVISION — MOVED TO TOP ★ -->
+<div class="qr-section" id="qr">
+  <h2>⭐ Quick Revision — Key Models &amp; Concepts at a Glance</h2>
+  <p style="color:rgba(255,255,255,.7);font-size:12px;margin-bottom:16px;">Click any framework below to jump directly to its full explanation. Use ▲/▼ buttons (bottom-right) to navigate.</p>
+
+  <h3>🗂 All Frameworks — Quick Jump</h3>
+  <div class="fw-index">
+    <div class="fw-item"><a href="#w1">W1 · Strategy Lenses &amp; Levels</a><p>Design, Experience, Ideas, Discourse · Corporate/Business/Functional</p></div>
+    <div class="fw-item"><a href="#pest">W2 · PEST Framework</a><p>Political, Economic, Social, Technological + Scenarios</p></div>
+    <div class="fw-item"><a href="#fiveforces">W2 · Porter's Five Forces</a><p>Rivalry, New Entrants, Substitutes, Supplier, Buyer Power</p></div>
+    <div class="fw-item"><a href="#w3">W3 · RBV / VRIO Framework</a><p>Valuable, Rare, Inimitable, Organized</p></div>
+    <div class="fw-item"><a href="#valuechain">W3 · Value Chain Analysis</a><p>5 Primary + 4 Support Activities → Margin</p></div>
+    <div class="fw-item"><a href="#bcg">W3 · BCG Matrix</a><p>Stars, Cash Cows, Question Marks, Dogs</p></div>
+    <div class="fw-item"><a href="#w4">W4 · Cultural Web</a><p>Stories, Rituals, Symbols, Power, Structure, Control + Paradigm</p></div>
+    <div class="fw-item"><a href="#drift">W4 · Strategic Drift (4 Phases)</a><p>Incremental → Drift → Flux → Transform/Death</p></div>
+    <div class="fw-item"><a href="#w5">W5 · Vision (Collins &amp; Porras)</a><p>Core Ideology + Envisioned Future (BHAG)</p></div>
+    <div class="fw-item"><a href="#horizons">W5 · McKinsey Horizon Model</a><p>H1 (0-3yr) · H2 (3-5yr) · H3 (5-12yr)</p></div>
+    <div class="fw-item"><a href="#mission">W5 · Mission Statement (9 Components)</a><p>Customers, Products, Geography, Technology, etc.</p></div>
+    <div class="fw-item"><a href="#w6">W6 · Carroll's CSR Pyramid</a><p>Economic → Legal → Ethical → Philanthropic</p></div>
+    <div class="fw-item"><a href="#stratcsr">W6 · Strategic CSR</a><p>Combined social + economic benefit embedded in operations</p></div>
+    <div class="fw-item"><a href="#w7">W7 · Porter's Generic Strategies</a><p>Cost Leadership · Differentiation · Focus · Best-Cost</p></div>
+    <div class="fw-item"><a href="#strategyclock">W7 · Strategy Clock</a><p>Diff zone · Low-price · Hybrid · Non-competitive</p></div>
+    <div class="fw-item"><a href="#w8">W8 · Ansoff Matrix</a><p>Market Penetration · Product Dev · Market Dev · Diversification</p></div>
+    <div class="fw-item"><a href="#retrench">W8 · Retrenchment Strategy</a><p>Turnaround · Divestment · Cost/Asset Reduction</p></div>
+    <div class="fw-item"><a href="#w9">W9 · Porter's Diamond</a><p>Factor Conditions · Demand · Related Industries · Rivalry</p></div>
+    <div class="fw-item"><a href="#intstrats">W9 · 4 International Strategies</a><p>Export · Multi-domestic · Global · Transnational</p></div>
+    <div class="fw-item"><a href="#w10">W10 · Strategic Methods</a><p>Organic · Acquisitions/Mergers · Strategic Alliances</p></div>
+    <div class="fw-item"><a href="#w11">W11 · Innovation Dilemmas</a><p>Push/Pull · Product/Process · Open/Closed · Tech/Business Model</p></div>
+    <div class="fw-item"><a href="#scurve">W11 · S-Curve &amp; Diffusion</a><p>Slow → Rapid → Plateau · Tipping Point</p></div>
+    <div class="fw-item"><a href="#w12">W12 · Org Structures</a><p>Functional · Divisional · Matrix · Transnational · Project</p></div>
+    <div class="fw-item"><a href="#bsc">W12 · Balanced Scorecard</a><p>Financial · Customer · Internal · Learning &amp; Growth</p></div>
+    <div class="fw-item"><a href="#w13">W13 · Cognitive Biases (5)</a><p>Confirmation · Anchoring · Saliency · Affect · Risk</p></div>
+    <div class="fw-item"><a href="#w14">W14 · SAF Framework</a><p>Suitability · Acceptability · Feasibility</p></div>
+    <div class="fw-item"><a href="#w15">W15 · Types of Change (2×2)</a><p>Adaptation · Evolution · Reconstruction · Revolution</p></div>
+    <div class="fw-item"><a href="#lewin">W15 · Lewin's 3-Step Model</a><p>Unfreeze → Change → Refreeze</p></div>
+    <div class="fw-item"><a href="#kotter">W15 · Kotter's 8-Step Process</a><p>Urgency → Coalition → Vision → … → Anchor</p></div>
+    <div class="fw-item"><a href="#delib-emerg">Key Topic · Deliberate vs Emergent</a><p>Planned vs unplanned strategy — almost always tested</p></div>
+  </div>
+
+  <div class="divider" style="background:linear-gradient(to right,rgba(201,168,76,.5),rgba(255,255,255,.1));margin:18px 0;"></div>
+
+  <h3>📋 Week-by-Week Must-Remember Points</h3>
+  <div class="sn-week"><span class="sn-wlabel">W1</span><span class="sn-wcontent">Strategy = direction, scope, advantage, stakeholder value. <strong style="color:#fcd34d">Three levels</strong>: Corporate/Business/Functional. <strong style="color:#fcd34d">Four lenses</strong>: Design (rational), Experience (cultural), Ideas (emergent), Discourse (language). Win tests: Fit, Competitive Advantage, Performance.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W2</span><span class="sn-wcontent">PEST: Political, Economic, Social, Technological. Five Forces: Rivalry, New Entrants, Substitutes, Supplier, Buyer. <strong style="color:#fcd34d">Attractive industry</strong>: moderate rivalry, high entry barriers, no substitutes, weak buyers/suppliers.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W3</span><span class="sn-wcontent">RBV/VRIO: Valuable, Rare, Inimitable (path dep/causal ambiguity/social complexity), Organized. Value chain: 5 primary (IL, Ops, OL, M&S, Service) + 4 support. BCG: Stars/Cash Cows/Question Marks/Dogs.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W4</span><span class="sn-wcontent">Cultural web: Stories, Rituals, Routines, Symbols, Power, Structure/Control + <strong style="color:#fcd34d">Paradigm</strong> (centre). Drift: Phase I (incremental) → II (drift) → III (flux) → IV (transform/death). Path dependency = history shapes current strategy.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W5</span><span class="sn-wcontent">Vision (BHAG + Vivid Desc) &gt; Mission (why we exist, 9 components) &gt; Goals (open-ended) &gt; Objectives (SMART). McKinsey Horizons: H1 (now, 0-3yr), H2 (emerging, 3-5yr), H3 (future, 5-12yr+).</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W6</span><span class="sn-wcontent">Carroll's Pyramid: Economic → Legal → Ethical → Philanthropic. <strong style="color:#fcd34d">NOT CSR characteristic</strong>: "aligning economic and legal." Strategic CSR = combined social AND economic benefit in core operations.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W7</span><span class="sn-wcontent">Cost leadership: lowest cost acceptable quality. Differentiation: uniqueness justifying premium. Focus: narrow segment. Best-cost: hybrid. Strategy clock zones. Interactive: small moves, unpredictability, cooperation, remove inertia.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W8</span><span class="sn-wcontent">Ansoff: Market Penetration, Product Dev, Market Dev, Diversification. Related div = within value network. Unrelated = beyond. Retrenchment: Turnaround + Divestment. Substantive: Horizontal/Vertical integration.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W9</span><span class="sn-wcontent">Porter's Diamond: Factor Cond, Demand Cond, Related Industries, Firm Rivalry. 4 strategies: Export (low/low), Multi-domestic (low/high), Global (high/low), Transnational (high/high). CAGE: Cultural, Admin, Geographical, Economic.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W10</span><span class="sn-wcontent">Three methods: Organic (slow, full control), Acquisition (fast, high risk), Alliance (shared risk/control). Alliance types: JV, Consortium, Network, Franchise, Licensing, Subcontracting. Alliance fails: diverging objectives, poor collaboration.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W11</span><span class="sn-wcontent">Dilemmas: Push/Pull, Product/Process, Open/Closed, Tech/Business Model. S-curve: slow → rapid → plateau. Tipping point = explosive growth. First-mover: experience, scale, reputation. Late-mover: free riding, learning. Spin-offs, ecosystems.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W12</span><span class="sn-wcontent">Configuration = strategy + structure + systems (must be mutually reinforcing). Execution is ITERATIVE not linear. Structural inertia = formal systems resist. Cultural inertia = norms resist. Structures: Functional/Divisional/Matrix/Transnational/Project. BSC: 4 perspectives.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W13</span><span class="sn-wcontent">Pyramid: Practitioners (who), Praxis (what they do), Practices (methodologies). Middle managers: info source, sense-making, adjustment, champions. 5 biases: Confirmation, Anchoring, Saliency, Affect, Risk. Open strategy: more participants, more transparency.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W14</span><span class="sn-wcontent">SAF: Suitability (does it fit?), Acceptability (risk/return/stakeholders OK?), Feasibility (can we do it?). BSC: Financial, Customer, Internal, Learning. Post-hoc vs strategic choice evaluation. Lynch: Consistency, Suitability, Validity, Feasibility, Risk, Attractiveness.</span></div>
+  <div class="sn-week"><span class="sn-wlabel">W15</span><span class="sn-wcontent">4 types: Adaptation (inc/grad), Evolution (trans/grad), Reconstruction (inc/big bang), Revolution (trans/big bang). Leadership: Transformational vs Transactional. Lewin: Unfreeze → Change → Refreeze. Kotter: 8 steps. Forcefield: driving vs restraining.</span></div>
+
+  <div class="divider" style="background:linear-gradient(to right,rgba(201,168,76,.5),rgba(255,255,255,.1));margin:18px 0;"></div>
+  <h3>🔴 MCQ Quick Answers (Past Paper Patterns)</h3>
+  <div class="sn-grid">
+    <div class="sn-box">
+      <ul>
+        <li>Strategy development as deliberate positioning → <strong style="color:#fcd34d">Strategy as Design / Planning</strong></li>
+        <li>Processes to collect/analyze market info → <strong style="color:#fcd34d">Market Sensing</strong></li>
+        <li>Actions to create culture not fully known → <strong style="color:#fcd34d">Causally Ambiguous</strong></li>
+        <li>NOT a characteristic of CSR → <strong style="color:#fcd34d">Aligning economic and legal</strong></li>
+        <li>Low-cost supplier enters; options EXCEPT → <strong style="color:#fcd34d">Undertake big moves</strong></li>
+        <li>Small innovative units from larger org → <strong style="color:#fcd34d">Spin-offs</strong></li>
+        <li>Institutionalized learning in informal norms → <strong style="color:#fcd34d">Cultural Inertia</strong></li>
+        <li>Middle managers role EXCEPT → <strong style="color:#fcd34d">Generating strategic options</strong></li>
+        <li>Seeking data confirming a decision → <strong style="color:#fcd34d">Confirmation Bias</strong></li>
+        <li>Change implemented in series of steps → <strong style="color:#fcd34d">Evolution/Reconstruction</strong></li>
+      </ul>
+    </div>
+    <div class="sn-box">
+      <ul>
+        <li>Emergence of order from variety/diversity → <strong style="color:#fcd34d">Strategy as Ideas</strong></li>
+        <li>NOT characteristic of strategic drift → <strong style="color:#fcd34d">Flexibility in activities</strong></li>
+        <li>Responsive CSR example → <strong style="color:#fcd34d">Good citizenship activities</strong></li>
+        <li>Strategy standardizes for global efficiency → <strong style="color:#fcd34d">Global Strategy</strong></li>
+        <li>Separate innovative unit in company → <strong style="color:#fcd34d">Corporate Venture</strong></li>
+        <li>Bureaucratic, specialized, decentralized DM → <strong style="color:#fcd34d">Professional Organization</strong></li>
+        <li>Indirect control of inputs → <strong style="color:#fcd34d">Cultural Systems</strong></li>
+        <li>Tied to one piece of information → <strong style="color:#fcd34d">Anchoring Bias</strong></li>
+        <li>NOT characteristic of strategic decisions → <strong style="color:#fcd34d">Scope of business unit's activities</strong></li>
+        <li>Seeking confirming data for made decision → <strong style="color:#fcd34d">Confirmation bias</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider" style="background:linear-gradient(to right,rgba(201,168,76,.5),rgba(255,255,255,.1));margin:18px 0;"></div>
+  <h3>📅 3-Day Study Plan</h3>
+  <div class="plan-grid">
+    <div class="plan-box">
+      <h3>Day 1 — Foundations</h3>
+      <ul>
+        <li>Strategy concepts, lenses, levels (W1)</li>
+        <li>PEST + Scenarios with example (W2)</li>
+        <li>Five Forces analysis (W2)</li>
+        <li>VRIO and value chain (W3)</li>
+        <li>Cultural web + Strategic drift (W4)</li>
+        <li>Vision/Mission 9 components (W5)</li>
+        <li>Carroll's Pyramid + Strategic CSR (W6)</li>
+      </ul>
+    </div>
+    <div class="plan-box">
+      <h3>Day 2 — Strategy</h3>
+      <ul>
+        <li>All 5 competitive strategies + Strategy Clock (W7)</li>
+        <li>Ansoff's Matrix — all 4 + examples (W8)</li>
+        <li>Retrenchment options (W8)</li>
+        <li>Porter's Diamond + 4 int'l strategies (W9)</li>
+        <li>Organic vs M&A vs Alliances (W10)</li>
+        <li>Innovation dilemmas 4 types (W11)</li>
+        <li>Org structures + Balanced Scorecard (W12)</li>
+      </ul>
+    </div>
+    <div class="plan-box">
+      <h3>Day 3 — Eval &amp; Practice</h3>
+      <ul>
+        <li>SAF criteria — practice 3 options (W14)</li>
+        <li>5 cognitive biases + practice (W13)</li>
+        <li>Types of change, Lewin, Kotter (W15)</li>
+        <li>Deliberate vs Emergent Strategy</li>
+        <li>Practice past paper case (M&N / Kantala / McLarens)</li>
+        <li>Read MCQ answer guide</li>
+        <li>Answer frameworks A–G</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc" id="toc">
+  <h2>Table of Contents</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#w1"><span class="toc-num">W1</span> Introducing Strategy</a>
+    <a class="toc-item" href="#w9"><span class="toc-num">W9</span> International Strategy</a>
+    <a class="toc-item" href="#w2"><span class="toc-num">W2</span> External Analysis: PEST &amp; 5 Forces</a>
+    <a class="toc-item" href="#w10"><span class="toc-num">W10</span> Strategic Methods</a>
+    <a class="toc-item" href="#w3"><span class="toc-num">W3</span> Internal Analysis: RBV &amp; Value Chain</a>
+    <a class="toc-item" href="#w11"><span class="toc-num">W11</span> Innovation &amp; Entrepreneurship</a>
+    <a class="toc-item" href="#w4"><span class="toc-num">W4</span> Culture &amp; Strategic Drift</a>
+    <a class="toc-item" href="#w12"><span class="toc-num">W12</span> Organizing for Strategic Success</a>
+    <a class="toc-item" href="#w5"><span class="toc-num">W5</span> Vision, Mission &amp; Objectives</a>
+    <a class="toc-item" href="#w13"><span class="toc-num">W13</span> The Practice of Strategy</a>
+    <a class="toc-item" href="#w6"><span class="toc-num">W6</span> Ethics &amp; CSR</a>
+    <a class="toc-item" href="#w14"><span class="toc-num">W14</span> Evaluating Strategies</a>
+    <a class="toc-item" href="#w7"><span class="toc-num">W7</span> Business Level Strategy</a>
+    <a class="toc-item" href="#w15"><span class="toc-num">W15</span> Leadership &amp; Managing Change</a>
+    <a class="toc-item" href="#w8"><span class="toc-num">W8</span> Corporate Level Strategy</a>
+    <a class="toc-item" href="#delib-emerg"><span class="toc-num">★</span> Deliberate vs Emergent Strategy</a>
+    <a class="toc-item" href="#mcq"><span class="toc-num">★</span> Full MCQ Answer Guide</a>
+    <a class="toc-item" href="#exam-frameworks"><span class="toc-num">★</span> Exam Answer Frameworks</a>
+    <a class="toc-item" href="#keydefs"><span class="toc-num">★</span> Key Definitions</a>
+    <a class="toc-item" href="#finaladvice"><span class="toc-num">★</span> Final Exam Advice</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 1 -->
+<div class="section" id="w1">
+  <div class="section-header">
+    <span class="week-badge">WEEK 1</span>
+    <h2>Introducing Strategy</h2>
+  </div>
+  <div class="card card-blue">
+    <h3>What is Strategy?</h3>
+    <p><strong>Johnson et al (2008):</strong> The direction and scope of an organization over the long term, which achieves advantage in a changing environment through its configuration of resources and competences with the aim of fulfilling stakeholder expectations.</p>
+    <p><strong>David (2009):</strong> Strategies are the means by which long-term objectives will be achieved.</p>
+    <p><strong>Porter:</strong> A company's action plan for outperforming competitors and achieving superior profitability.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-navy">
+      <h4>Characteristics of Strategic Decisions</h4>
+      <ul>
+        <li>Long-term direction of the organization</li>
+        <li>Scope of an organization's activities</li>
+        <li>Gaining advantage over competitors</li>
+        <li>Addressing changes in the business environment</li>
+        <li>Building on resources and competencies</li>
+        <li>Values and expectations of stakeholders</li>
+      </ul>
+    </div>
+    <div class="card card-gold">
+      <h4>Three Tests for a Winning Strategy</h4>
+      <ul>
+        <li><strong>Fit Test:</strong> Dynamic fit with external &amp; internal situation</li>
+        <li><strong>Competitive Advantage Test:</strong> Significant &amp; sustainable advantage</li>
+        <li><strong>Performance Test:</strong> Good profitability, financial strength, market standing</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Levels of Strategy</h3>
+  <div class="grid-3">
+    <div class="card card-navy"><h4>Corporate Level</h4><p>Overall direction &amp; management of all businesses. <em>Which industries/markets to compete in?</em></p></div>
+    <div class="card card-blue"><h4>Business Level</h4><p>Competitive &amp; cooperative strategies at SBU level. <em>How to beat rivals in this market?</em></p></div>
+    <div class="card card-green"><h4>Functional Level</h4><p>Maximize resource productivity within each function. <em>How to improve marketing efficiency?</em></p></div>
+  </div>
+
+  <h3>The Four Strategy Lenses</h3>
+  <div class="grid-2">
+    <div class="card card-blue"><h4>🔵 Design Lens</h4><p>Strategy as rational, analytical, systematic planning by top management. Deliberate.</p></div>
+    <div class="card card-green"><h4>🟢 Experience Lens</h4><p>Strategy shaped by individual experience and organizational culture. History-driven.</p></div>
+    <div class="card card-purple"><h4>🟣 Ideas Lens</h4><p>Strategy emerges from new ideas — order and innovation from variety and diversity within/around organization.</p></div>
+    <div class="card card-orange"><h4>🟠 Discourse Lens</h4><p>Strategy language shapes understanding. Importance of being able to talk the language of strategy effectively.</p></div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Elements of Strategic Management</h3>
+    <div class="grid-3">
+      <div><h4>Strategic Position</h4><p>Env. opportunities &amp; threats; org strengths &amp; weaknesses; basic purpose; how culture fits strategy.</p></div>
+      <div><h4>Strategic Choices</h4><p>Business, corporate &amp; international strategies. Innovation, alliances, mergers.</p></div>
+      <div><h4>Strategy in Action</h4><p>Evaluating strategies (SAF), organizing for implementation, managing change.</p></div>
+    </div>
+  </div>
+  <div class="exam-tip">Strategy lenses appear in MCQ. Design=rational/deliberate; Experience=culture-driven; Ideas=emergent/diversity; Discourse=language/communication.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 2 -->
+<div class="section" id="w2">
+  <div class="section-header">
+    <span class="week-badge">WEEK 2</span>
+    <h2>External Analysis: PEST &amp; Five Forces</h2>
+  </div>
+
+  <div id="pest" class="card card-blue">
+    <h3>PEST Framework — General Environment Analysis</h3>
+    <div class="grid-2">
+      <div>
+        <h4>P — Political &amp; Legal</h4>
+        <ul><li>Government regulations, trade policies</li><li>Political instability, corruption levels</li><li>Geo-political tensions, business legislation</li></ul>
+        <h4>E — Economic</h4>
+        <ul><li>GDP growth, inflation &amp; price stability</li><li>Interest rates &amp; monetary policy, fiscal policy</li><li>Trade environment, industrialization level</li></ul>
+      </div>
+      <div>
+        <h4>S — Social &amp; Cultural</h4>
+        <ul><li>Demographic changes (age, population, gender)</li><li>Education, lifestyle trends, cultural values</li><li>Social mobility &amp; career aspirations</li></ul>
+        <h4>T — Technological</h4>
+        <ul><li>Rate of change, R&amp;D, AI/ML/IoT/blockchain</li><li>Digital platforms &amp; ecosystems</li><li>Workforce tech skills &amp; infrastructure</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-gold">
+    <h4>How to Use PEST (4 Steps)</h4>
+    <ol><li>Identify <strong>key factors for change</strong> likely to impact strategy</li><li>Identify <strong>alternatives</strong> within key factors</li><li>Develop <strong>scenarios</strong> — matrix based on variability in key factors</li><li>Explain the <strong>impact of each scenario</strong> on the organization</li></ol>
+    <p style="margin-top:8px;"><strong>Scenario Planning:</strong> Select 2 key PEST factors with HIGH variability &amp; HIGH impact. Plot them on X-Y axes to create a 2×2 matrix with 4 scenario quadrants. Name each scenario and explain the strategic response needed.</p>
+  </div>
+
+  <h3 id="fiveforces">Porter's Five Forces Model</h3>
+  <div class="ff-diagram">
+    <div class="ff-empty"></div>
+    <div class="ff-box"><span class="ff-arrow">⬆</span><strong>THREAT OF NEW ENTRANTS</strong><small>Barriers: Scale, Access, Switching costs, Capital, Gov. policy</small></div>
+    <div class="ff-empty"></div>
+    <div class="ff-box"><span class="ff-arrow">⬅</span><strong>BARGAINING POWER OF SUPPLIERS</strong><small>Concentrated, differentiated, forward integration threat</small></div>
+    <div class="ff-box ff-center">⚔<br><strong>COMPETITIVE RIVALRY</strong><br><small>Central force — determines industry attractiveness</small></div>
+    <div class="ff-box"><strong>BARGAINING POWER OF BUYERS</strong><span class="ff-arrow">➡</span><small>Concentrated, low switching costs, backward integration</small></div>
+    <div class="ff-empty"></div>
+    <div class="ff-box"><span class="ff-arrow">⬇</span><strong>THREAT OF SUBSTITUTES</strong><small>Products offering similar benefit by different process</small></div>
+    <div class="ff-empty"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4>ATTRACTIVE Industry ✅</h4>
+      <ul><li>Rivalry is moderate</li><li>Entry barriers are high</li><li>Good substitutes do not exist</li><li>Suppliers &amp; buyers in weak bargaining positions</li></ul>
+    </div>
+    <div class="card card-red">
+      <h4>UNATTRACTIVE Industry ❌</h4>
+      <ul><li>Rivalry is high</li><li>Entry barriers are low</li><li>Strong substitutes exist</li><li>Suppliers &amp; buyers have considerable bargaining power</li></ul>
+    </div>
+  </div>
+
+  <div class="card card-navy">
+    <h4>Five Forces: Strategic Implications</h4>
+    <ul>
+      <li><strong>Positioning:</strong> Position company to better cope with current competitive forces</li>
+      <li><strong>Anticipating:</strong> Exploit shifts in the forces</li>
+      <li><strong>Shaping:</strong> Shape the balance of forces to create a more favorable industry structure</li>
+    </ul>
+  </div>
+
+  <h3>Strategic Groups</h3>
+  <p>Organizations within an industry following <strong>similar strategies or competing on similar bases</strong>. Map them on a 2D grid using two differentiating characteristics. Useful for identifying direct competitors and positioning gaps.</p>
+  <div class="exam-tip">For Five Forces essays: (1) Name all five forces, (2) Assess each as high/moderate/low with 2–3 reasons, (3) Give overall industry attractiveness verdict, (4) State strategic implications for the company.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 3 -->
+<div class="section" id="w3">
+  <div class="section-header">
+    <span class="week-badge">WEEK 3</span>
+    <h2>Internal Analysis: Resources, RBV &amp; Value Chain</h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h3>Resources</h3>
+      <h4>Tangible Resources</h4><p>Assets that can be seen and quantified: buildings, machinery, cash, inventory.</p>
+      <h4>Intangible Resources</h4><p>Rooted in firm's history: brand equity, patents, reputation, culture, knowledge, ecosystem relationships. <strong>More sustainable competitive advantage</strong> — harder for competitors to imitate.</p>
+    </div>
+    <div class="card card-green">
+      <h3>Capabilities</h3>
+      <p>What the organization <strong>can DO with its resources</strong>. Built over time through complex interactions.</p>
+      <h4>Threshold Capabilities</h4><p>Minimum needed to compete and achieve parity with competitors. NOT a source of competitive advantage.</p>
+      <h4>Core Competencies</h4><p>Linked skills, activities &amp; resources that: (1) deliver customer value, (2) differentiate from competitors, (3) can be extended and developed.</p>
+      <h4>Dynamic Capabilities</h4><p>Ability to <strong>renew and recreate</strong> strategic capabilities for changing environments. Three sub-processes: <strong>Sensing → Seizing → Reconfiguring</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Resource-Based View (RBV) — VRIO/VRIN Framework</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Criterion</th><th>Question to Ask</th><th>Key Details</th></tr>
+      <tr><td><strong>V — Valuable</strong></td><td>Do resources/capabilities enable the firm to exploit opportunities or neutralize threats?</td><td>Resources must add value for customers</td></tr>
+      <tr><td><strong>R — Rare</strong></td><td>How many competitors already possess these capabilities?</td><td>Resources need to be scarce relative to competitors</td></tr>
+      <tr><td><strong>I — Inimitable</strong></td><td>How difficult or costly is it for others to imitate?</td><td><strong>Path dependence</strong> (historical), <strong>Causal ambiguity</strong> (reasons not fully known), <strong>Social complexity</strong> (interpersonal relationships)</td></tr>
+      <tr><td><strong>O — Organized</strong></td><td>Is the firm organized to exploit the full competitive potential?</td><td>Non-substitutable; cannot be replaced by other resources providing same value</td></tr>
+    </table>
+    </div>
+  </div>
+  <div class="exam-tip">Causal ambiguity = actions needed to create a capability are NOT fully known. Path dependency = historical events establish paths with lasting effects. Social complexity = complex interpersonal relationships. These 3 make resources INIMITABLE.</div>
+
+  <h3 id="valuechain">Value Chain Analysis (Porter)</h3>
+  <div class="vc-wrap">
+    <div class="vc-support">
+      <p style="font-weight:700;font-size:12px;color:#1e3a8a;margin-bottom:8px;">SUPPORT ACTIVITIES</p>
+      <div class="vc-srow"><span class="vc-sitem">🏢 Firm Infrastructure (management, planning, finance, legal)</span><span class="vc-sitem">👥 Human Resource Management (recruit, train, develop, compensate)</span></div>
+      <div class="vc-srow"><span class="vc-sitem">💡 Technology Development (R&amp;D, product design, process equipment)</span><span class="vc-sitem">🛒 Procurement (raw materials, fixed assets, advertising services)</span></div>
+    </div>
+    <div class="vc-prim">
+      <div class="vc-act">📦 Inbound Logistics<br><span style="font-size:10px;font-weight:400;">Receiving, storing, inventory control</span></div>
+      <div class="vc-act">⚙️ Operations<br><span style="font-size:10px;font-weight:400;">Manufacturing, assembly, packaging</span></div>
+      <div class="vc-act">🚚 Outbound Logistics<br><span style="font-size:10px;font-weight:400;">Warehousing, order processing</span></div>
+      <div class="vc-act">📣 Marketing &amp; Sales<br><span style="font-size:10px;font-weight:400;">Advertising, distribution, sales force</span></div>
+      <div class="vc-act">🔧 Service<br><span style="font-size:10px;font-weight:400;">Installation, repair, training</span></div>
+    </div>
+  </div>
+  <p style="font-size:12px;font-style:italic;text-align:center;margin-top:4px;">→ MARGIN = Total value created minus total costs of all activities = Competitive Advantage</p>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4>Value Chain for Cost Leadership</h4>
+      <ul><li>Efficient inbound logistics (locate near suppliers)</li><li>Technology to reduce manufacturing cost</li><li>Low-cost transport for outbound logistics</li><li>Mass-scale marketing promotions, price to sell volume</li><li>Few management layers, AI-driven planning, cost-effective procurement</li></ul>
+    </div>
+    <div class="card card-green">
+      <h4>Value Chain for Differentiation</h4>
+      <ul><li>Superior R&amp;D and product design</li><li>High quality inputs &amp; procurement</li><li>Premium marketing and brand building</li><li>Exceptional customer service activities</li><li>Skilled HRM — hire and retain specialists</li></ul>
+    </div>
+  </div>
+
+  <h3 id="bcg">BCG Matrix (Portfolio Analysis)</h3>
+  <div class="bcg-wrap">
+    <div class="bcg-cell" style="background:#3b82f6;color:white;">⭐ STARS<br><small>High share · High growth<br>Invest &amp; grow → future Cash Cows</small></div>
+    <div class="bcg-cell" style="background:#f59e0b;color:white;">❓ QUESTION MARKS<br><small>Low share · High growth<br>Invest selectively or divest</small></div>
+    <div class="bcg-cell" style="background:#22c55e;color:white;">💰 CASH COWS<br><small>High share · Low growth<br>Harvest — fund Stars/QMs</small></div>
+    <div class="bcg-cell" style="background:#ef4444;color:white;">🐕 DOGS<br><small>Low share · Low growth<br>Divest or harvest — exit</small></div>
+  </div>
+
+  <div class="card card-orange">
+    <h3>SWOT Analysis</h3>
+    <div class="grid-2">
+      <div><h4>Internal (Organization)</h4><ul><li><strong>Strengths:</strong> Core competencies, brand, quality, resources</li><li><strong>Weaknesses:</strong> Higher costs, weak innovation, narrow product line</li></ul></div>
+      <div><h4>External (Environment)</h4><ul><li><strong>Opportunities:</strong> New markets, mergers, unserved segments</li><li><strong>Threats:</strong> Slow growth, intense competition, powerful buyers/suppliers</li></ul></div>
+    </div>
+  </div>
+  <div class="exam-tip">Value chain exam questions: Draw the chain, then apply the specific strategy. Cost leadership = efficiency in ALL activities; Differentiation = focus on activities creating unique value for customers.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 4 -->
+<div class="section" id="w4">
+  <div class="section-header">
+    <span class="week-badge">WEEK 4</span>
+    <h2>Organization History, Culture &amp; Strategic Drift</h2>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Corporate Culture (Thompson et al.)</h3>
+    <p>The <strong>character of a company's internal work climate and personality</strong> — shaped by its core values, beliefs, business principles, traditions, ingrained behaviours and style of operating. Culture defines how a firm conducts business and interacts with key stakeholders.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card card-purple"><h4>Values</h4><p>What is considered important; core beliefs and principles of the organization.</p></div>
+    <div class="card card-blue"><h4>Norms</h4><p>Define appropriate employee attitudes and behaviors; the unwritten rules.</p></div>
+    <div class="card card-green"><h4>Artifacts</h4><p>Visible elements — office layout, dress code, ceremonies, logos, symbols.</p></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h4>Strong Culture ✅</h4>
+      <ul><li>Key values deeply held and widely shared</li><li>High agreement on what organization stands for</li><li>Builds cohesiveness, loyalty, commitment</li><li>Significant peer pressure to conform to norms</li><li><em>Example: Intel — "Speed" value widely shared</em></li></ul>
+    </div>
+    <div class="card card-red">
+      <h4>Weak Culture ❌</h4>
+      <ul><li>No consistent values preached or shared</li><li>Few behavioral norms visible in practices</li><li>Greater hostility to new ways of doing things</li><li>Employees view work as "just a place to work"</li><li>Little assistance in strategy implementation</li></ul>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h4>Culture Promotes Strategy Execution</h4>
+      <ul><li>Provides clear guidance on behaviour that constitutes good performance</li><li>Produces peer pressure to conform to culturally accepted norms</li><li>Creates shared understanding across the organization</li></ul>
+    </div>
+    <div class="card card-red">
+      <h4>Culture as Barrier to Execution</h4>
+      <ul><li>Conflicts between old culture &amp; new strategy behaviours</li><li>Cultural inertia resists change in dynamic environments</li><li>Entrenched "commonly held shared values" may oppose new direction</li></ul>
+    </div>
+  </div>
+
+  <h3 id="drift">Strategic Drift (Johnson et al., 2008)</h3>
+  <div class="card card-gold">
+    <p><strong>Definition:</strong> "The tendency for strategies to develop incrementally on the basis of historical and cultural influences but <em>fail to keep pace with a changing environment.</em>"</p>
+    <div class="tbl-wrap">
+    <table class="tbl" style="margin-top:10px;">
+      <tr><th>Phase</th><th>Description</th><th>Key Characteristics</th></tr>
+      <tr><td><strong>Phase I: Incremental Change</strong></td><td>Long periods of continuity; small strategy changes</td><td>Aligned with environment, success of past, experimenting within capability base</td></tr>
+      <tr><td><strong>Phase II: Strategic Drift</strong></td><td>Strategy incremental but NO LONGER in line with environment</td><td>Problem of hindsight, building on familiar operations, rigidity in activities, lack of stakeholder support</td></tr>
+      <tr><td><strong>Phase III: Period of Flux</strong></td><td>Downturn in performance; strategies change with no clear direction</td><td>Disagreement: use historic capabilities or develop new ones?</td></tr>
+      <tr><td><strong>Phase IV: Transformation or Death</strong></td><td>Major multiple changes to strategy or organizational failure</td><td>Change in products, markets, capabilities, top management — or organization fails</td></tr>
+    </table>
+    </div>
+    <h4>Causes of Strategic Drift:</h4>
+    <ul>
+      <li><strong>Path Dependency:</strong> "Early events and decisions establish policy paths that have lasting effects on subsequent events and decisions" (Johnson et al). Behavior rooted in the past becomes entrenched.</li>
+      <li><strong>Cultural Inertia:</strong> Institutionalized norms, values, social networks resist change.</li>
+    </ul>
+  </div>
+
+  <h3>The Cultural Web (Johnson &amp; Scholes)</h3>
+  <p>Shows the behavioral, physical, and symbolic manifestations of a culture that inform and are informed by the taken-for-granted assumptions — the <strong>Paradigm</strong>.</p>
+  <div class="grid-3">
+    <div class="card card-blue" style="margin:4px;"><h4>📖 Stories</h4><p>Narratives told by members about successes, disasters, heroes. Communicates what is important in the organization.</p></div>
+    <div class="card card-green" style="margin:4px;"><h4>🎭 Rituals &amp; Routines</h4><p><strong>Rituals:</strong> Activities highlighting importance (training, conferences). <strong>Routines:</strong> "The way we do things around here" day-to-day.</p></div>
+    <div class="card card-purple" style="margin:4px;"><h4>🏅 Symbols</h4><p>Objects, events, acts that convey meaning beyond functional purpose (offices, cars, titles, logos, dress code).</p></div>
+    <div class="card card-orange" style="margin:4px;"><h4>💪 Power Structures</h4><p>Most powerful groups associated with core beliefs. Powerful executives may sustain strategic drift.</p></div>
+    <div class="card card-red" style="margin:4px;"><h4>🏗 Org. Structure</h4><p>Reflects power — formal hierarchical structures emphasize that strategy is province of top management.</p></div>
+    <div class="card card-navy" style="margin:4px;"><h4>📊 Control Systems</h4><p>Measurement and reward systems. What is monitored reveals culture (financial vs quality focus).</p></div>
+  </div>
+  <div class="card card-gold">
+    <h4>🎯 THE PARADIGM (Centre of the Web)</h4>
+    <p>The <strong>taken-for-granted assumptions and beliefs</strong>. Collective experience applied to make sense of situations. Difficult for insiders to identify — outsiders often needed.</p>
+  </div>
+  <p><strong>How to use the Cultural Web:</strong> (1) Analyze culture as it is NOW, (2) Analyze culture as org WANTS it to be, (3) Compare current vs desired, (4) Prioritize changes and develop a plan.</p>
+  <div class="exam-tip">Cultural web exam: Identify each of the 6 elements + Paradigm and apply them to the case. For culture &amp; strategy alignment: show how each element supports or conflicts with strategy execution.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 5 -->
+<div class="section" id="w5">
+  <div class="section-header">
+    <span class="week-badge">WEEK 5</span>
+    <h2>Strategic Purpose: Vision, Mission &amp; Objectives</h2>
+  </div>
+
+  <div class="pyramid-wrap">
+    <div style="text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:10px;">Hierarchy of Strategic Purpose</div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#1a2340;width:200px;">VISION<br><small style="font-weight:400;">Where we want to go</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#2d3a5a;width:270px;">MISSION<br><small style="font-weight:400;">Reason for being / What we do</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#c9a84c;color:#1a2340;width:340px;">GOALS<br><small>Open-ended aspirations (no timeframe)</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#374151;width:400px;">OBJECTIVES<br><small style="font-weight:400;">Specific, measurable, time-bound targets (SMART)</small></div></div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Vision — Collins &amp; Porras Framework</h3>
+    <div class="grid-2">
+      <div>
+        <h4>Core Ideology (Enduring Character)</h4>
+        <ul>
+          <li><strong>Core Values:</strong> Essential, enduring tenets; timeless guiding principles requiring no external justification</li>
+          <li><strong>Core Purpose:</strong> Organization's reason for being; captures the soul; not just about products or customers</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Envisioned Future (Aspirations)</h4>
+        <ul>
+          <li><strong>BHAG</strong> (Big, Hairy, Audacious Goal): Clear &amp; compelling 10–30 year goal; catalyst for team spirit; clear finish line</li>
+          <li><strong>Vivid Description:</strong> Vibrant, specific description of what it will be like to achieve the BHAG — translate vision into pictures</li>
+        </ul>
+      </div>
+    </div>
+    <h4>Vision Examples:</h4>
+    <ul>
+      <li>IKEA: <em>"To create a better everyday life for the many people."</em></li>
+      <li>Nike: <em>"To bring inspiration and innovation to every athlete in the world."</em></li>
+      <li>Google: <em>"To provide access to the world's information in one click."</em></li>
+    </ul>
+  </div>
+
+  <h3 id="horizons">McKinsey's Horizon Model</h3>
+  <div class="card card-blue">
+    <p>Explains how organizations manage current business while building future opportunities. Defines the meaning of "long-term" strategy in practical terms.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Horizon</th><th>Time Frame</th><th>Focus</th><th>Example</th></tr>
+      <tr><td><strong>H1: Core Business</strong></td><td>0–3 years</td><td>Defend &amp; extend core business; sustain profitability; optimize operations</td><td>Bank improving current savings products</td></tr>
+      <tr><td><strong>H2: Emerging Opportunities</strong></td><td>3–5 years</td><td>Build emerging businesses that can become profitable in medium term</td><td>Bank launching mobile banking services</td></tr>
+      <tr><td><strong>H3: Viable Future Options</strong></td><td>5–12+ years</td><td>Create genuinely new businesses for the future; explore options; highly uncertain</td><td>Bank exploring blockchain-based finance</td></tr>
+    </table>
+    </div>
+    <p style="margin-top:8px;"><strong>Key insight:</strong> Successful organizations manage all three horizons simultaneously. H1 funds H2 and H3. H3 = the "long term" in strategy.</p>
+  </div>
+
+  <h3 id="mission">Mission Statement</h3>
+  <div class="card card-navy">
+    <p>"Declaration of an organization's <strong>reason for being</strong>." — What is our business?</p>
+    <div class="grid-2">
+      <div>
+        <h4>Characteristics</h4>
+        <ul><li>Broad in scope (&lt;250 words)</li><li>Inspiring and enduring</li><li>Identifies utility of firm's products</li><li>Reveals social &amp; environmental responsibility</li><li>Includes nine standard components</li></ul>
+      </div>
+      <div>
+        <h4>Nine Components</h4>
+        <ol style="font-size:12.5px;">
+          <li>Customers — who do we serve?</li>
+          <li>Products/Services — what do we offer?</li>
+          <li>Geographic domain — where?</li>
+          <li>Core technologies — what tech?</li>
+          <li>Survival/Growth/Profitability — key accomplishments needed</li>
+          <li>Company philosophy — distinctive philosophy?</li>
+          <li>Self-concept — concept to convey?</li>
+          <li>Desired public image — what image?</li>
+          <li>Employee treatment — how are employees valued?</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h4>Objectives — SMART</h4>
+      <ul><li><strong>S</strong>pecific — Unambiguous in what is to be achieved</li><li><strong>M</strong>easurable — Specified as a quantity</li><li><strong>A</strong>ttainable — Within realistic reach</li><li><strong>R</strong>elevant — Appropriate to the mission</li><li><strong>T</strong>ime-bound — Has a completion date</li></ul>
+      <p style="margin-top:6px;"><em>Example: "To achieve 25% ROCE by December 2026"</em></p>
+    </div>
+    <div class="card card-purple">
+      <h4>Stakeholders &amp; Governance (Freeman, 1984)</h4>
+      <p>"Any group or individual who is affected by or can affect the achievement of an organization's objectives."</p>
+      <p>Includes: shareholders, employees, customers, suppliers, government, NGOs, communities, unions.</p>
+      <p><strong>Stakeholder management:</strong> Balance all stakeholder expectations — not just shareholders — to ensure long-term firm success.</p>
+    </div>
+  </div>
+  <div class="exam-tip">McKinsey Horizon Model is regularly asked. Remember: H1=now (0-3yr), H2=emerging (3-5yr), H3=future (5-12yr+). The "long term" in strategy refers to H3.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 6 -->
+<div class="section" id="w6">
+  <div class="section-header">
+    <span class="week-badge">WEEK 6</span>
+    <h2>Business Ethics &amp; Corporate Social Responsibility</h2>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Business Ethics</h3>
+    <p>The study of business situations, activities, and decisions where <strong>issues of right and wrong are addressed</strong> (Crane &amp; Matten). Ethics derives from Greek 'ethos' — custom or habit belonging to character and virtues.</p>
+    <div class="grid-3" style="margin-top:10px;">
+      <div class="card card-blue" style="margin:3px;"><h4>Deontology</h4><p>Immanuel Kant. What rules, duties, or moral obligations apply? Right is right regardless of consequences.</p></div>
+      <div class="card card-green" style="margin:3px;"><h4>Utilitarianism</h4><p>Jeremy Bentham. What action produces the greatest good for the greatest number?</p></div>
+      <div class="card card-purple" style="margin:3px;"><h4>Virtue Ethics</h4><p>Aristotle. What action aligns with good character and moral virtues?</p></div>
+    </div>
+  </div>
+
+  <h3>Carroll's Pyramid of CSR</h3>
+  <div class="pyramid-wrap">
+    <div class="pyr-row"><div class="pyr-blk" style="background:#7c3aed;width:160px;">PHILANTHROPIC<br><small style="font-weight:400;">Be a good corporate citizen</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#2563eb;width:230px;">ETHICAL<br><small style="font-weight:400;">Be ethical; do what is right and fair</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#16a34a;width:300px;">LEGAL<br><small style="font-weight:400;">Obey the law; fulfill legal requirements</small></div></div>
+    <div class="pyr-row"><div class="pyr-blk" style="background:#c9a84c;color:#1a2340;width:370px;">ECONOMIC (FOUNDATION)<br><small>Be profitable; generate shareholder returns</small></div></div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Six Characteristics of CSR (Crane et al.)</h3>
+    <div class="grid-3">
+      <div><strong>1. Voluntary</strong><br><small>Going beyond legal requirements</small></div>
+      <div><strong>2. Internalizing Externalities</strong><br><small>Managing negative social impacts</small></div>
+      <div><strong>3. Multiple Stakeholder Orientation</strong><br><small>Not just shareholders</small></div>
+      <div><strong>4. Alignment of Social &amp; Economic</strong><br><small>NOT "economic and legal" — common exam trap!</small></div>
+      <div><strong>5. Practice and Values</strong><br><small>CSR in core day-to-day practices</small></div>
+      <div><strong>6. Beyond Philanthropy</strong><br><small>Integrate social concerns into business model</small></div>
+    </div>
+  </div>
+  <div class="exam-tip">MCQ TRAP: "Aligning economic and legal responsibilities" is NOT a characteristic of CSR. The correct ones are: Voluntary, Beyond philanthropy, Multiple stakeholder orientation, Internalizing externalities, Alignment of social AND economic, Practice and values.</div>
+
+  <div class="card card-gold" id="stratcsr">
+    <h3>Strategic CSR (Porter &amp; Kramer)</h3>
+    <p>Creates a <strong>win-win situation</strong> where BOTH the business and stakeholders benefit. Goes beyond responsive CSR (good citizenship) to create shared value.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+      <tr><td>Pure Philanthropy</td><td>Social benefit only; no business benefit</td><td>Donating to charity with no strategic link</td></tr>
+      <tr><td>Responsive CSR (Good Citizenship)</td><td>Good business practices; meet community obligations</td><td>Environmentally safe packaging</td></tr>
+      <tr><td><strong>Strategic CSR</strong></td><td>Combined social AND economic benefit; integrated into core strategy</td><td>Dilmah MJF Tea Garden: addresses worker poverty AND improves productivity</td></tr>
+      <tr><td>Pure Business</td><td>Economic benefit only; no social consideration</td><td>Conventional profit-only activities</td></tr>
+    </table>
+    </div>
+    <h4>Four Pillars of Strategic CSR:</h4>
+    <ul><li>CSR perspective in strategic planning</li><li>Medium to long-term focus</li><li>Stakeholder perspective</li><li>Core operations integration (embedded in value chain)</li></ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 7 -->
+<div class="section" id="w7">
+  <div class="section-header">
+    <span class="week-badge">WEEK 7</span>
+    <h2>Business Level Strategy — Competitive Strategies</h2>
+  </div>
+
+  <div class="card card-blue">
+    <p><strong>Strategic Business Unit (SBU):</strong> A part of an organization for which there is a distinct external market for goods or services that is different from another SBU. SBUs decentralize initiative, allow varying strategies, and encourage accountability.</p>
+  </div>
+
+  <h3>Porter's Generic Competitive Strategies</h3>
+  <div class="ansoff-wrap">
+  <table class="ansoff">
+    <tr><th style="width:18%">Target / Advantage</th><th>Lower Cost</th><th>Differentiation</th></tr>
+    <tr>
+      <td style="background:#1a2340;color:white;font-weight:700;font-size:12px;">BROAD TARGET</td>
+      <td style="background:#eff6ff;"><strong>COST LEADERSHIP</strong><br><small>Lowest cost among all competitors in the industry. Acceptable quality.</small></td>
+      <td style="background:#f0fdf4;"><strong>DIFFERENTIATION</strong><br><small>Unique attributes valued by broad range of buyers. Justifies premium price.</small></td>
+    </tr>
+    <tr>
+      <td style="background:#2d3a5a;color:white;font-weight:700;font-size:12px;">NARROW TARGET</td>
+      <td style="background:#fef9c3;"><strong>FOCUSED COST LEADERSHIP</strong><br><small>Lowest cost within a specific niche segment.</small></td>
+      <td style="background:#fdf4ff;"><strong>FOCUSED DIFFERENTIATION</strong><br><small>Unique features for a specific niche segment. Premium pricing.</small></td>
+    </tr>
+  </table>
+  </div>
+  <p style="font-size:12px;font-style:italic;margin:6px 0 14px;">Middle ground = <strong>Best Cost Provider Strategy</strong> — combines differentiation AND low cost (hybrid approach)</p>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h3>Cost Leadership Strategy</h3>
+      <p>Produce goods/services with acceptable features at the <strong>lowest cost relative to competitors</strong> (not necessarily absolute lowest).</p>
+      <h4>Approach 1: Efficient value chain activities</h4>
+      <ul><li>Use online/social media marketing</li><li>Capture economies of scale</li><li>Learning and experience curve effects</li><li>Customer retention focus, AI adoption</li></ul>
+      <h4>Approach 2: Revamp value chain</h4>
+      <ul><li>Eliminate low-value-added steps (outsource)</li><li>Relocate facilities closer to markets</li><li>Offer basic, no-frills product/service</li><li>Use online technology (e.g. Pizza Hut)</li></ul>
+      <h4>Limitations:</h4>
+      <ul><li>Low-cost methods easily imitated by rivals</li><li>Technological breakthroughs open cost reductions for rivals</li><li>Ignores buyer interest in quality/features</li></ul>
+    </div>
+    <div class="card card-green">
+      <h3>Differentiation Strategy</h3>
+      <p>Produce goods/services customers <strong>perceive as different in ways that are important to them</strong>, commanding a price premium.</p>
+      <h4>Drivers of Differentiation:</h4>
+      <ul><li>Unique product features</li><li>Exceptional services</li><li>New technologies</li><li>Quality of inputs</li><li>Exceptional skills or experience</li><li>Sustainability initiatives</li><li>Ethical grounds (free of child labor, fair trade)</li></ul>
+      <h4>Differentiation in Value Chain:</h4>
+      <ul><li>Marketing, sales, customer service (brand image)</li><li>Product R&amp;D and design (unique features)</li><li>Purchasing/procurement (quality inputs)</li><li>Production processes (technology)</li><li>Distribution (speed, reliability)</li></ul>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-purple">
+      <h3>Focus Strategies</h3>
+      <p>Targets a <strong>narrow segment</strong>, tailoring to that segment's specific needs exclusively.</p>
+      <h4>Focused Cost Leadership:</h4>
+      <p>IKEA — low cost for young style-conscious buyers (self-assembly, warehouse stores, no delivery, room settings).</p>
+      <h4>Focused Differentiation:</h4>
+      <p>Dilmah — premium ethical tea for environmentally conscious consumers; Kantala — sustainable vegan bags for niche market.</p>
+      <h4>Success Factors for Focus:</h4>
+      <ul><li>Distinct customer needs (clear segment)</li><li>Distinct value chains (hard to imitate)</li><li>Viable segment economics (profitable size)</li></ul>
+    </div>
+    <div class="card card-orange">
+      <h3>Best Cost Provider Strategy</h3>
+      <p>Combines BOTH cost efficiency AND differentiation — "more value for money." For middle-market customers who want quality but are price-sensitive.</p>
+      <h4>Southwest Airlines Example:</h4>
+      <ul>
+        <li><strong>Cost:</strong> Single aircraft model (Boeing 737), secondary airports, no meals, 15-min turnaround, no reserved seats</li>
+        <li><strong>Differentiation:</strong> High customer satisfaction, employee dedication, point-to-point service</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="strategyclock">The Strategy Clock (Johnson et al.)</h3>
+  <div class="clock-grid">
+    <div class="clock-zone cz-diff"><strong>Differentiation Zone</strong><p>High perceived value. Commands price premium. Sustainable with brand loyalty.</p></div>
+    <div class="clock-zone cz-low"><strong>Low-Price Zone</strong><p>Lower price, lower perceived value. Compete on price. Cost efficiency critical.</p></div>
+    <div class="clock-zone cz-hybrid"><strong>Hybrid Strategy Zone</strong><p>Moderate price AND moderate-high value. Sustainable if cost base allows.</p></div>
+    <div class="clock-zone cz-non"><strong>Non-Competitive Zone ❌</strong><p>High price, Low value. UNSUSTAINABLE — customers will not pay premium for inferior products.</p></div>
+  </div>
+
+  <div class="card card-navy">
+    <h3>Interactive Competitive Strategies</h3>
+    <p>When a <strong>low-cost competitor enters your industry</strong>, available options for a differentiator:</p>
+    <ul>
+      <li><strong>Cannibalize bases of success</strong> — Remove organizational inertia</li>
+      <li>Undertake <strong>series of small moves</strong> — avoid big moves</li>
+      <li>Be <strong>unpredictable</strong> in responses</li>
+      <li>Use a <strong>cooperative strategy</strong> (ally with another player)</li>
+    </ul>
+  </div>
+  <div class="exam-tip">For case questions: Identify strategy (cost leadership/differentiation/focus) with justification from the case, then design the value chain showing HOW that strategy is delivered through specific activities.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 8 -->
+<div class="section" id="w8">
+  <div class="section-header">
+    <span class="week-badge">WEEK 8</span>
+    <h2>Corporate Level Strategy &amp; Strategic Growth Directions</h2>
+  </div>
+
+  <div class="card card-blue">
+    <p><strong>Corporate level strategy</strong> is concerned with the overall purpose and scope of an organization and how value will be added to different parts (business units). Focus: scope of firm, resource allocation, long-term growth, synergy creation.</p>
+  </div>
+
+  <h3>Ansoff's Matrix — Strategic Growth Directions</h3>
+  <div class="ansoff-wrap">
+  <table class="ansoff">
+    <tr>
+      <th style="width:20%">Products / Markets</th>
+      <th>EXISTING Products</th>
+      <th>NEW Products</th>
+    </tr>
+    <tr>
+      <td style="background:#1a2340;color:white;font-weight:700;font-size:12px;">EXISTING Markets</td>
+      <td style="background:#dcfce7;vertical-align:top;">
+        <strong>MARKET PENETRATION</strong><br>
+        <small>Gain dominance in existing market. Lower prices, expand distribution, heavier promotions, attract rival's customers, stimulate product trial. <em>Lowest risk.</em></small>
+      </td>
+      <td style="background:#dbeafe;vertical-align:top;">
+        <strong>PRODUCT DEVELOPMENT</strong><br>
+        <small>New offerings for existing markets. Product innovation, augmentation, or line extension. Requires R&amp;D capability. Must have "point of difference."</small>
+      </td>
+    </tr>
+    <tr>
+      <td style="background:#2d3a5a;color:white;font-weight:700;font-size:12px;">NEW Markets</td>
+      <td style="background:#fef9c3;vertical-align:top;">
+        <strong>MARKET DEVELOPMENT</strong><br>
+        <small>Existing offerings to new markets (geographic or new segments). May involve product modifications, different distribution, change in sales strategy.</small>
+      </td>
+      <td style="background:#fce7f3;vertical-align:top;">
+        <strong>DIVERSIFICATION</strong><br>
+        <small>New products AND new markets. <em>Highest risk.</em> Related (within value network) or Unrelated (beyond current capabilities). Apply distinctive competency to new markets.</small>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h3>Related Diversification</h3>
+      <p>Beyond current products/markets but <strong>within the capabilities of the value network</strong>. Core competence transferred across business units.</p>
+      <h4>Creates value through:</h4>
+      <ul>
+        <li><strong>Economies of scope</strong> — Cost savings from transferring capabilities</li>
+        <li><strong>Operational relatedness</strong> — Sharing primary activities (e.g., shared distribution)</li>
+        <li><strong>Corporate relatedness</strong> — Transferring management/technology knowledge across units</li>
+        <li>Market power through multipoint competition</li>
+      </ul>
+      <p><em>Example: Ceylon Biscuits Limited expanding into chocolate/confectionery</em></p>
+    </div>
+    <div class="card card-purple">
+      <h3>Unrelated Diversification</h3>
+      <p>Development <strong>beyond current capabilities AND value network</strong>. Creates value through financial economies.</p>
+      <h4>Financial Economies:</h4>
+      <ul>
+        <li>Efficient internal capital allocation</li>
+        <li>Purchasing and restructuring other companies</li>
+        <li>Synergies from corporate office interacting with business units</li>
+      </ul>
+      <p><em>Example: Hayleys — tourism, plantation, manufacturing, retail</em></p>
+      <p><em>Example: JKH — shipping, supermarkets, IT, real estate, tourism</em></p>
+    </div>
+  </div>
+
+  <h3>Main Strategic Alternatives</h3>
+  <div class="grid-2">
+    <div class="card card-navy">
+      <h4>Limited Growth</h4><ul><li>Market penetration</li><li>Market development</li><li>Product development</li></ul>
+      <h4>Substantive Growth</h4><ul><li>Horizontal integration (acquire competitor)</li><li>Backward vertical integration (acquire input supplier)</li><li>Forward vertical integration (acquire distribution/retail)</li><li>Related diversification</li><li>Unrelated diversification</li></ul>
+    </div>
+    <div class="card card-red" id="retrench">
+      <h4>Retrenchment (Main Objective: SURVIVAL)</h4>
+      <p>Used when declining profits due to recession, inefficiency, or competitor innovation.</p>
+      <ul>
+        <li><strong>Turnaround Strategy:</strong> Stabilize crisis → gain stakeholder support → define target markets → refocus &amp; financial restructuring. New management often brought in.</li>
+        <li><strong>Divestment:</strong> Sell a business unit to raise funds or eliminate poor strategic fit.</li>
+        <li><strong>Cost/Asset Reduction:</strong> Cut unnecessary costs, sell assets.</li>
+        <li><strong>Revenue Generation:</strong> Focus on profitable core strengths quickly.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exam-tip">Ansoff matrix is critical for case studies. When asked to "identify strategic growth directions," name the Ansoff quadrant + justify with evidence from the case. When asked for "future strategies," propose ones NOT yet used by the company. Always evaluate optimal using SAF.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 9 -->
+<div class="section" id="w9">
+  <div class="section-header">
+    <span class="week-badge">WEEK 9</span>
+    <h2>International Strategy</h2>
+  </div>
+
+  <h3>Internationalization Drivers (Yip's Framework)</h3>
+  <div class="grid-2">
+    <div class="card card-blue"><h4>Market Drivers</h4><ul><li>Similar customer needs globally (e.g., Visa cards)</li><li>Global customers (Toyota, Ford)</li><li>Transferable marketing (Coca-Cola)</li></ul></div>
+    <div class="card card-green"><h4>Cost Drivers</h4><ul><li>Scale economies in production &amp; purchasing</li><li>Country-specific cost differences (Bangladesh labor)</li><li>Favorable logistics for small products</li></ul></div>
+    <div class="card card-purple"><h4>Government Drivers</h4><ul><li>Trade barrier reductions, regional economic integration (EU)</li><li>Compatible technical standards</li><li>Host country policies</li></ul></div>
+    <div class="card card-orange"><h4>Competitive Drivers</h4><ul><li>Interdependence between countries</li><li>Need to respond to competitor's global strategy</li></ul></div>
+  </div>
+
+  <h3 id="porterdiamond">Porter's Diamond — Locational Advantage</h3>
+  <p>Explains why <strong>some nations are more competitive than others</strong> in specific industries.</p>
+  <div class="diamond-grid">
+    <div class="dia-empty"></div>
+    <div class="dia-box"><strong>FACTOR CONDITIONS</strong><br><small>Nation's factors of production: land, labour, capital, infrastructure. Basic vs Advanced factors.<br>E.g.: Indian IT literacy → software advantage</small></div>
+    <div class="dia-empty"></div>
+    <div class="dia-box"><strong>FIRM STRATEGY, STRUCTURE &amp; RIVALRY</strong><br><small>Domestic rivalry drives innovation.<br>E.g.: German tech excellence → engineering advantage</small></div>
+    <div class="dia-box dia-center">NATIONAL<br>COMPETITIVE<br>ADVANTAGE<br>◆</div>
+    <div class="dia-box"><strong>DEMAND CONDITIONS</strong><br><small>Sophisticated local customers push firms to improve.<br>E.g.: Japanese electronics consumers → global competitiveness</small></div>
+    <div class="dia-empty"></div>
+    <div class="dia-box"><strong>RELATED &amp; SUPPORTING INDUSTRIES</strong><br><small>Local clusters of related industries.<br>E.g.: Italy shoes near leather suppliers</small></div>
+    <div class="dia-empty"></div>
+  </div>
+
+  <h3 id="intstrats">Four International Strategies (Global-Local Matrix)</h3>
+  <div class="tbl-wrap">
+  <table class="tbl">
+    <tr><th>Strategy</th><th>Global Integration</th><th>Local Responsiveness</th><th>Key Characteristics</th><th>Best When</th></tr>
+    <tr><td><strong>Export Strategy</strong></td><td>LOW</td><td>LOW</td><td>Leverage home-country capabilities internationally with minor adaptations. Centralized operations. E.g. Google</td><td>Distinctive capabilities + strong brand; both pressures low</td></tr>
+    <tr><td><strong>Multi-domestic</strong></td><td>LOW</td><td>HIGH</td><td>Maximize local responsiveness. Each country unit operates independently. Adapted products/operations. E.g. food companies</td><td>Strong local needs; limited efficiency gains from integration</td></tr>
+    <tr><td><strong>Global Strategy</strong></td><td>HIGH</td><td>LOW</td><td>Standardized products worldwide; world as one marketplace. Centralized control. E.g. Cemex (cement)</td><td>Strong cost pressures; customers have similar needs globally</td></tr>
+    <tr><td><strong>Transnational</strong></td><td>HIGH</td><td>HIGH</td><td>Combines advantages of multi-domestic + global. Adapted locally AND globally coordinated. Intricate value chain. Best of both.</td><td>Both efficiency AND local responsiveness are critical</td></tr>
+  </table>
+  </div>
+
+  <h3>Entry Modes</h3>
+  <div class="entry-grid">
+    <div class="entry-box" style="background:#dcfce7;border:2px solid #16a34a;"><strong>Exporting</strong><p style="font-size:11px;margin-top:4px;">Low risk, Low control</p></div>
+    <div class="entry-box" style="background:#dbeafe;border:2px solid #2563eb;"><strong>Licensing / Franchising</strong><p style="font-size:11px;margin-top:4px;">Low risk, Low control</p></div>
+    <div class="entry-box" style="background:#fef9c3;border:2px solid var(--gold);"><strong>Strategic Alliance / JV</strong><p style="font-size:11px;margin-top:4px;">Medium risk, Medium control</p></div>
+    <div class="entry-box" style="background:#fee2e2;border:2px solid #dc2626;"><strong>Acquisition</strong><p style="font-size:11px;margin-top:4px;">High risk, High control</p></div>
+    <div class="entry-box" style="background:#f3e8ff;border:2px solid #9333ea;"><strong>Greenfield</strong><p style="font-size:11px;margin-top:4px;">Very high risk, Full control</p></div>
+  </div>
+
+  <div class="card card-navy">
+    <h4>Ghemawat's CAGE Framework (Market Selection)</h4>
+    <ul>
+      <li><strong>C</strong>ultural Distance: Differences in language, ethnicity, religion, social norms</li>
+      <li><strong>A</strong>dministrative/Political Distance: Incompatible administrative, political, or legal traditions</li>
+      <li><strong>G</strong>eographical Distance: Physical size, sea access, transport/communication infrastructure quality</li>
+      <li><strong>E</strong>conomic Distance: Differences in wealth and income levels between countries</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 10 -->
+<div class="section" id="w10">
+  <div class="section-header">
+    <span class="week-badge">WEEK 10</span>
+    <h2>Strategic Methods: Organic, M&amp;A &amp; Alliances</h2>
+  </div>
+  <p>A <strong>strategic method</strong> is the means by which a strategy can be pursued.</p>
+  <div class="tbl-wrap">
+  <table class="tbl">
+    <tr><th>Method</th><th>Definition</th><th>Speed</th><th>Risk</th><th>Control</th></tr>
+    <tr><td><strong>Organic Growth</strong></td><td>Build strategies by developing the organization's own capabilities</td><td>Slow</td><td>Medium</td><td>Full</td></tr>
+    <tr><td><strong>Acquisitions &amp; Mergers</strong></td><td>Purchase or combine with another company</td><td>Fast</td><td>High</td><td>Full (post-acq)</td></tr>
+    <tr><td><strong>Strategic Alliances</strong></td><td>Share resources with partner firms; joint pursuit of strategy</td><td>Medium</td><td>Shared</td><td>Shared</td></tr>
+  </table>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h3>Organic Growth (Internal Development)</h3>
+      <h4>Advantages:</h4>
+      <ul><li>Knowledge and learning accumulation (stays internal)</li><li>Spreading investment over time</li><li>No availability constraint</li><li>Strategic independence maintained</li><li>Culture management easier (no clash)</li></ul>
+      <h4>Challenges:</h4>
+      <ul><li>Must overcome entry barriers from scratch</li><li>Invest in new production capacity, supply chains</li><li>Hire, train employees, build distribution channels</li><li>Slower than M&amp;A; higher financial risk</li></ul>
+    </div>
+    <div class="card card-blue">
+      <h3>Acquisitions &amp; Mergers</h3>
+      <h4>Motives for M&amp;A:</h4>
+      <ul>
+        <li><strong>Strategic:</strong> Extension (geography/products), Consolidation (remove competitors), Capabilities (acquire new ones)</li>
+        <li><strong>Financial:</strong> Financial efficiency, Tax efficiency, Asset stripping/unbundling</li>
+        <li><strong>Managerial:</strong> Personal ambition, Bandwagon effect</li>
+      </ul>
+      <h4>Common Problems in Acquisitions:</h4>
+      <ul><li>Integration difficulties (cultural fit is crucial)</li><li>Inadequate evaluation of target</li><li>Large/extraordinary debt</li><li>Inability to achieve expected synergy</li><li>Too much diversification</li></ul>
+      <h4>Target Choice Criteria:</h4>
+      <ul><li><strong>Strategic fit:</strong> Target strengthens or complements the strategy</li><li><strong>Organizational fit:</strong> Match in management practices, culture, staff characteristics</li></ul>
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h3>Strategic Alliances</h3>
+    <p>Two or more organizations share resources and activities to pursue a common strategy.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+      <tr><td><strong>Joint Venture</strong></td><td>Create a new jointly-owned organization; parents remain independent</td><td>Sri Lankan + Indian firm for South Asian ops</td></tr>
+      <tr><td><strong>Consortium</strong></td><td>Multi-organization JV focused on a specific project</td><td>Airbus (multiple European companies)</td></tr>
+      <tr><td><strong>Network</strong></td><td>Less formal; mutual advantage without cross-ownership</td><td>Apple ecosystem (developers, suppliers)</td></tr>
+      <tr><td><strong>Franchising</strong></td><td>Franchisor: brand/marketing/training; Franchisee: operations</td><td>McDonald's, KFC</td></tr>
+      <tr><td><strong>Licensing</strong></td><td>Right to manufacture patented product for a fee</td><td>Pharma technology licensing</td></tr>
+      <tr><td><strong>Subcontracting</strong></td><td>Outsource particular services or part of a process</td><td>Call center outsourcing</td></tr>
+    </table>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h4>When is an Alliance Strategic?</h4>
+        <ul><li>Critical to achieving an important objective</li><li>Helps build/sustain/enhance a core competency</li><li>Helps block a competitive threat</li><li>Opens important market opportunities</li><li>Mitigates a significant risk</li></ul>
+      </div>
+      <div>
+        <h4>Why Alliances Fail:</h4>
+        <ul><li>Diverging objectives and priorities of partners</li><li>Inability of partners to work well together</li><li>Changing conditions rendering purpose obsolete</li><li>More attractive technological paths emerge</li><li>Marketplace rivalry between allies</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="exam-tip">For strategic method questions: Always evaluate using SAF. E.g. Alliance for Kantala: Suitable (access markets), Acceptable (shared risk, no large capital), Feasible (can leverage existing network).</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 11 -->
+<div class="section" id="w11">
+  <div class="section-header">
+    <span class="week-badge">WEEK 11</span>
+    <h2>Innovation &amp; Entrepreneurial Strategy</h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4>Invention vs Innovation</h4>
+      <p><strong>Invention:</strong> Conversion of new knowledge into a new product, process, or service.</p>
+      <p><strong>Innovation:</strong> Invention PLUS putting the new product/process/service into actual use (commercializing it).</p>
+    </div>
+    <div class="card card-red">
+      <h4>Disruptive Innovation</h4>
+      <p>Innovations that <strong>radically change an industry's rules</strong> for producers and consumers. Examples: DVDs wiped out videotape; digital cameras eliminated film; smartphones disrupted multiple industries.</p>
+    </div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Four Innovation Dilemmas</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Dilemma</th><th>Option A</th><th>Option B</th><th>Key Insight</th></tr>
+      <tr><td><strong>Technology Push vs Market Pull</strong></td><td>Tech Push: Knowledge from scientists drives innovation</td><td>Market Pull: Listen to users first; actual use drives innovation</td><td>Most successful innovations balance both</td></tr>
+      <tr><td><strong>Product vs Process Innovation</strong></td><td>Product: New features of the final product (e.g. Apple design)</td><td>Process: Improve how product is produced/distributed (e.g. Dell supply chain)</td><td>Different competitive advantages from each</td></tr>
+      <tr><td><strong>Open vs Closed Innovation</strong></td><td>Closed: Own internal resources; secretive; protect IP</td><td>Open: Deliberately import/export knowledge; exchange ideas openly</td><td>Closed=control; Open=speed and breadth</td></tr>
+      <tr><td><strong>Tech vs Business Model Innovation</strong></td><td>Technological: New science or technology</td><td>Business Model: Reorganize elements of business into new combinations</td><td>Business models as powerful as tech (Netflix, Airbnb, Uber)</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <h3 id="scurve">Innovation Diffusion — The S-Curve</h3>
+  <div class="card card-blue">
+    <p>Diffusion = the process by which innovations spread among users. The S-curve reflects: initial slow adoption → rapid acceleration in diffusion → plateau representing the limit to demand.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Key S-Curve Concepts:</h4>
+        <ul>
+          <li><strong>Tipping Point:</strong> Where demand suddenly takes off with explosive growth. Managers must invest BEFORE this to capture advantage.</li>
+          <li><strong>Plateau:</strong> Eventual slowdown. Organizations should begin investing in the NEXT S-curve (H2/H3) before current growth peaks.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Speed of Diffusion Driven by:</h4>
+        <ul>
+          <li>Degree of performance improvement</li>
+          <li>Compatibility with existing factors</li>
+          <li>Complexity of product/marketing</li>
+          <li>Ability to experiment before purchase</li>
+          <li><strong>Network effects</strong> — demand grows as more users adopt</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h4>First-Mover Advantages</h4>
+      <ul><li>Experience curve benefits</li><li>Scale benefits from being first</li><li>Pre-emption of scarce resources</li><li>Reputation and brand building</li><li>Buyer switching costs lock in customers</li></ul>
+    </div>
+    <div class="card card-orange">
+      <h4>Late-Mover Advantages</h4>
+      <ul><li><strong>Free-ride</strong> on first-mover's market development &amp; R&amp;D</li><li><strong>Learn</strong> from first-mover's mistakes</li><li>Lower investment (no need to educate market)</li><li>Adopt improved technology; enter with more efficient processes</li></ul>
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h3>Entrepreneurial Relationships</h3>
+    <div class="grid-3">
+      <div><h4>Corporate Venturing</h4><p>Investing externally in new ventures; protects ventures from internal bureaucracy and spreads risk.</p></div>
+      <div><h4>Spin-offs / Spin-outs</h4><p>Generation of small innovative units from larger organizations. E.g. Google spinning out Waymo.</p></div>
+      <div><h4>Ecosystems</h4><p>Fostering communities of suppliers, agents, distributors, franchisees, tech entrepreneurs. E.g. Apple App Store.</p></div>
+    </div>
+    <h4 style="margin-top:12px;">Stages of Entrepreneurial Growth:</h4>
+    <p><strong>Start-up</strong> (capital challenge) → <strong>Growth</strong> (management challenge) → <strong>Maturity</strong> (retaining enthusiasm; entrepreneurship → intrapreneurship) → <strong>Exit</strong> (succession, sale, IPO)</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 12 -->
+<div class="section" id="w12">
+  <div class="section-header">
+    <span class="week-badge">WEEK 12</span>
+    <h2>Organizing for Strategic Success</h2>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Nature of Strategy Execution</h3>
+    <p><strong>"Execution is NOT a linear process — it is an ITERATIVE process."</strong> Technology, customer needs and competition don't adhere to any calendar.</p>
+    <h4>Primary Challenges:</h4>
+    <ul><li>Failure to connect the dots (formulation ↔ execution gap)</li><li>Responding to continuous changes in tech, customer needs, competition</li><li>Allocating resources appropriately, reconciling conflicting demands</li><li>Balancing current operational needs with future businesses</li><li>Challenging the status quo</li></ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-red"><h4>Structural Inertia</h4><p>Resistance to change rooted in the <strong>size, complexity, and interdependence</strong> of organizational structures, systems, and formal processes.</p></div>
+    <div class="card card-orange"><h4>Cultural Inertia</h4><p>Institutionalized learning and common expectations <strong>manifest in the informal norms, values, social networks</strong>.</p></div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Organizational Configuration (Congruence Model)</h3>
+    <p>Strategy, Structure, and Systems must be <strong>mutually reinforcing</strong>. McKinsey 7-S Framework: Strategy, Structure, Systems, Skills, Staff, Style, Shared Values — all 7 must align.</p>
+    <div class="grid-2">
+      <div><h4>Hardware (Formal)</h4><ul><li><strong>Critical Tasks:</strong> Important tasks for producing &amp; marketing the product</li><li><strong>Formal Organization:</strong> Structure (hierarchies, reporting lines), measurements, systems must support strategy</li></ul></div>
+      <div><h4>Software (People)</h4><ul><li><strong>Skills &amp; Competencies:</strong> Required to carry out critical tasks; skills acquisition, dynamic capability</li><li><strong>Culture:</strong> "How we do things around here." Dysfunctional culture = root of many strategic failures</li></ul></div>
+    </div>
+  </div>
+
+  <h3>Organizational Structures</h3>
+  <div class="tbl-wrap">
+  <table class="tbl">
+    <tr><th>Structure</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>Functional</strong></td><td>Organized by function: production, sales, finance, HR</td><td>Clear responsibilities; specialists at senior level; simplified control</td><td>Senior managers overburdened; coordination problems; difficult with diversity</td></tr>
+    <tr><td><strong>Divisional</strong></td><td>Separate divisions by product, service, or geography</td><td>Flexible; performance control by division; ownership of strategy</td><td>Duplication; fragmentation; danger of losing central control</td></tr>
+    <tr><td><strong>Matrix</strong></td><td>Combines dimensions simultaneously (e.g. product + geography)</td><td>Integrates knowledge; flexible; good for global operations</td><td>Slow decisions; unclear responsibilities; high conflict</td></tr>
+    <tr><td><strong>Transnational</strong></td><td>Global network: knowledge sharing + specialization + coordination</td><td>Combines local responsiveness with global coordination</td><td>Complex to manage; sophisticated coordination required</td></tr>
+    <tr><td><strong>Project-based</strong></td><td>Teams created for projects, then dissolved</td><td>Maximum flexibility; teams match project needs</td><td>Less stable; resource allocation challenges</td></tr>
+  </table>
+  </div>
+
+  <h3>Organizational Control Systems</h3>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4>1. Planning Systems</h4><p>Direct control of INPUTS (resources consumed). Financial budgets, HR allocation, long-term investment planning.</p>
+      <h4>2. Cultural Systems</h4><p>Indirect control through norms and values (self-control). Recruitment (cultural fit), Socialization, Reward systems (pay, promotion, symbolic recognition).</p>
+    </div>
+    <div class="card card-green">
+      <h4>3. Performance Targeting Systems (KPIs)</h4><p>Focus on OUTPUTS of the organization. Key Performance Indicators, Balanced Scorecard, quality targets, profit/revenue targets.</p>
+      <h4>4. Market Systems (Internal Markets)</h4><p>SBUs compete for internal contracts/resources. Indirect control — SBUs must earn by being competitive within the organization.</p>
+    </div>
+  </div>
+
+  <h3 id="bsc">The Balanced Scorecard (Kaplan &amp; Norton)</h3>
+  <div class="bsc-grid">
+    <div class="bsc-cell bsc-fin">
+      <h4 style="color:#166534;">💰 Financial Perspective</h4>
+      <p style="font-size:12px;font-style:italic;">"How do we look to shareholders?"</p>
+      <p style="font-size:12.5px;">KPIs: Revenue growth, profit margin, ROCE, shareholder value, EPS</p>
+    </div>
+    <div class="bsc-cell bsc-cust">
+      <h4 style="color:#1e40af;">👥 Customer Perspective</h4>
+      <p style="font-size:12px;font-style:italic;">"How do customers see us?"</p>
+      <p style="font-size:12.5px;">KPIs: Customer satisfaction score, market share, retention rate, acquisition rate</p>
+    </div>
+    <div class="bsc-cell bsc-int">
+      <h4 style="color:#6b21a8;">⚙️ Internal Business Processes</h4>
+      <p style="font-size:12px;font-style:italic;">"What must we excel at?"</p>
+      <p style="font-size:12.5px;">KPIs: Operational efficiency, quality defect rate, cycle time, innovation pipeline</p>
+    </div>
+    <div class="bsc-cell bsc-learn">
+      <h4 style="color:#9a3412;">🌱 Learning &amp; Growth (Innovation)</h4>
+      <p style="font-size:12px;font-style:italic;">"Can we continue to improve and create value?"</p>
+      <p style="font-size:12.5px;">KPIs: Employee skills/training hours, staff satisfaction, R&amp;D investment, system capabilities</p>
+    </div>
+  </div>
+  <div style="background:var(--navy);color:white;border-radius:8px;padding:12px;text-align:center;font-size:13px;margin-top:6px;">
+    <strong style="color:var(--gold);">STRATEGY MAP (Causal Link):</strong> Learning &amp; Growth → enables better Internal Processes → improves Customer satisfaction → drives Financial performance
+  </div>
+  <div class="exam-tip">Balanced Scorecard is frequently asked. Remember the four perspectives and design measures that are LINKED (a strategy map). Traditional financial measures alone are insufficient for modern strategy.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 13 -->
+<div class="section" id="w13">
+  <div class="section-header">
+    <span class="week-badge">WEEK 13</span>
+    <h2>The Practice of Strategy</h2>
+  </div>
+
+  <div class="grid-3">
+    <div class="card card-navy"><h4>Practitioners — WHO?</h4><p>CEO, Top Management Team, Non-Executive Directors, Strategic Planners, Middle Managers, Strategy Consultants</p></div>
+    <div class="card card-blue"><h4>Praxis — WHAT?</h4><p>Strategic analysis, issue selling, strategic decision making, communicating the strategy</p></div>
+    <div class="card card-gold"><h4>Practice — HOW?</h4><p>Strategy workshops, projects, hypothesis testing, business cases, strategic plans</p></div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Roles of Different Strategists</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Strategist</th><th>Role &amp; Contribution</th><th>Key Risk/Limitation</th></tr>
+      <tr><td><strong>CEO</strong></td><td>Chief strategist; owns and is accountable for strategy success/failure</td><td>Over-confidence; excessive personalization</td></tr>
+      <tr><td><strong>Top Management Team</strong></td><td>Executives share strategic responsibility; encourage strategic debate</td><td>Groupthink; bias in strategic thinking</td></tr>
+      <tr><td><strong>Non-Executive Directors</strong></td><td>External, objective view; no executive responsibility. Consultative, reviewing, challenging proposals. Fully independent.</td><td>May lack deep industry knowledge</td></tr>
+      <tr><td><strong>Strategic Planners</strong></td><td>Formal responsibility for coordinating strategy process. Tasks: information/analysis, managing process, special projects.</td><td>Available only in large companies</td></tr>
+      <tr><td><strong>Middle Managers</strong></td><td>Information source, <strong>sense-making</strong> of strategy, reinterpretation of strategic responses, <strong>champions of new ideas</strong></td><td>Mostly lack strategic perspective; traditionally implementation-only</td></tr>
+      <tr><td><strong>Strategy Consultants</strong></td><td>External analysts; analyze, prioritize, generate options, transfer knowledge, promote decisions, implement change</td><td>Cost; knowledge transfer risk</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>Five Cognitive Biases in Strategic Decision Making</h3>
+    <div class="grid-3">
+      <div class="card card-red" style="margin:3px;">
+        <h4>1. Confirmation Bias</h4>
+        <p>Seeking out data that <strong>confirms</strong> a decision already made.</p>
+      </div>
+      <div class="card card-orange" style="margin:3px;">
+        <h4>2. Anchoring Bias</h4>
+        <p>Being <strong>tied to one piece of information</strong> in making a decision.</p>
+      </div>
+      <div class="card card-purple" style="margin:3px;">
+        <h4>3. Saliency Bias</h4>
+        <p>A particular analogy becomes <strong>unduly influential</strong> (salient).</p>
+      </div>
+      <div class="card card-blue" style="margin:3px;">
+        <h4>4. Affect Bias</h4>
+        <p>Managers become too <strong>emotionally attached</strong> to a particular option.</p>
+      </div>
+      <div class="card card-green" style="margin:3px;">
+        <h4>5. Risk Bias</h4>
+        <p>Managers hold <strong>distorted views of risk</strong> (often over-optimistic).</p>
+      </div>
+      <div class="card card-navy" style="margin:3px;">
+        <h4>Solution</h4>
+        <p>Design a good DM process; involve diverse perspectives; challenge assumptions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h3>Strategy Methodologies</h3>
+    <ul>
+      <li><strong>Strategy Workshops:</strong> Groups of executives, 1–2 days off-site; for formulation and reconsideration of strategies</li>
+      <li><strong>Strategy Projects:</strong> Teams on specific strategic issues for a defined period. Need: clear mandate, top management commitment, milestones, appropriate resources</li>
+      <li><strong>Hypothesis Testing:</strong> Start with a proposition and test with real-world data; used in strategy projects</li>
+      <li><strong>Business Cases:</strong> Data and argument supporting a specific strategy proposal (e.g., new product investment)</li>
+      <li><strong>Strategic Plans:</strong> Comprehensive plan for whole organization. Elements: mission, goals, environmental analysis, capability analysis, proposed strategy, resources, key changes</li>
+    </ul>
+  </div>
+
+  <div class="card card-orange">
+    <h4>Open vs Closed Strategy</h4>
+    <div class="grid-2">
+      <div><strong>Open Strategy (more participants, more transparency):</strong><ul><li>Collective intelligence improves formulation</li><li>Increases implementation commitment and buy-in</li><li>Example: LEGO Ideas platform — customers propose product ideas</li></ul></div>
+      <div><strong>Risks of Open Strategy:</strong><ul><li>Too many participants slow decision-making</li><li>Risk of leaking sensitive information to competitors</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 14 -->
+<div class="section" id="w14">
+  <div class="section-header">
+    <span class="week-badge">WEEK 14</span>
+    <h2>Evaluating Strategies</h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-blue"><h4>Post Hoc Evaluation</h4><p>Evaluating a strategy <strong>already in operation</strong>. Evaluate outcomes against benchmarks. Role: allow corrective action. Tools: Balanced Scorecard, Margin Return Model.</p></div>
+    <div class="card card-green"><h4>Strategic Choice Evaluation</h4><p>Techniques to <strong>decide which strategic option to choose</strong> from several alternatives. Primary tool: SAF Framework.</p></div>
+  </div>
+
+  <div class="card card-gold">
+    <h3>SAF Framework — Evaluating the Optimal Strategic Choice (Johnson &amp; Scholes)</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th style="width:15%">Criterion</th><th>Core Question</th><th>Sub-questions &amp; Tools</th></tr>
+      <tr>
+        <td><strong>S — SUITABILITY</strong></td>
+        <td>Does the strategy address the key opportunities and constraints? Does it FIT?</td>
+        <td>
+          <ul>
+            <li>Fits with environmental opportunities/threats (PEST, Five Forces)?</li>
+            <li>Builds on strategic capabilities (VRIO)?</li>
+            <li>Appropriate for stakeholder expectations and culture?</li>
+            <li><em>Tool: Ranking/Scoring matrix</em></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>A — ACCEPTABILITY</strong></td>
+        <td>Does the strategy meet stakeholder expectations? Is risk &amp; return acceptable?</td>
+        <td>
+          <ul>
+            <li><strong>Return:</strong> ROCE, DCF analysis, expected financial benefits</li>
+            <li><strong>Risk:</strong> Break-even, financial ratios, sensitivity analysis</li>
+            <li><strong>Stakeholder reactions:</strong> Stakeholder mapping; political dimensions</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>F — FEASIBILITY</strong></td>
+        <td>Would the strategy work in practice? Can the org deliver it?</td>
+        <td>
+          <ul>
+            <li>Can it be financed? (cash flow analysis, break-even)</li>
+            <li>Do the people/skills exist or can they be obtained?</li>
+            <li>Can required resources be obtained and integrated?</li>
+            <li><em>Tool: Resource deployment analysis, cash flow projections</em></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Lynch's Evaluation Criteria (6 Criteria)</h3>
+    <div class="grid-3">
+      <div><strong>Consistency</strong><p style="font-size:12px;">In line with mission and objectives?</p></div>
+      <div><strong>Suitability</strong><p style="font-size:12px;">Fits business and competitive environment?</p></div>
+      <div><strong>Validity</strong><p style="font-size:12px;">Based on realistic assumptions?</p></div>
+      <div><strong>Feasibility</strong><p style="font-size:12px;">Will it work? Are resources available?</p></div>
+      <div><strong>Business Risk</strong><p style="font-size:12px;">Do returns justify the exposure?</p></div>
+      <div><strong>Attractiveness to Stakeholders</strong><p style="font-size:12px;">Will key stakeholders support it?</p></div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Types of Control</h3>
+    <div class="grid-3">
+      <div><h4>Input Controls</h4><p>Resources used in performance. Training hours, R&amp;D budget allocated, financial inputs.</p></div>
+      <div><h4>Behavior Controls</h4><p>Activities that generate performance. Following procedures, sales calls made, compliance.</p></div>
+      <div><h4>Output Controls</h4><p>Actual performance results. Sales quotas, profit targets, customer satisfaction scores.</p></div>
+    </div>
+  </div>
+  <div class="exam-tip">For 'determine the optimal strategic choice' questions: Evaluate each option using Suitability, Acceptability, and Feasibility. Create a clear table comparing options, then justify your recommendation clearly.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WEEK 15 -->
+<div class="section" id="w15">
+  <div class="section-header">
+    <span class="week-badge">WEEK 15</span>
+    <h2>Leadership &amp; Managing Strategic Change</h2>
+  </div>
+
+  <h3>Types of Strategic Change (Balogun &amp; Hope Hailey)</h3>
+  <div class="change-2x2">
+    <div class="ch-header" style="grid-column:2">GRADUAL (Evolutionary speed)</div>
+    <div class="ch-header" style="grid-column:3">BIG BANG (Revolutionary speed)</div>
+    <div class="ch-header">REALIGNMENT (Incremental extent)</div>
+    <div class="ch-cell ch-adapt">
+      <strong>ADAPTATION</strong><br>
+      <small>Small step-by-step changes aligned with existing strategy. Most common and least risky.</small>
+    </div>
+    <div class="ch-cell ch-recon">
+      <strong>RECONSTRUCTION</strong><br>
+      <small>Rapid change without changing fundamental strategy. Turnaround situations. Cost-cutting without strategy change.</small>
+    </div>
+    <div class="ch-header">TRANSFORMATION (Fundamental extent)</div>
+    <div class="ch-cell ch-evol">
+      <strong>EVOLUTION</strong><br>
+      <small>Fundamental change implemented slowly over time through programs. Long-term cultural transformation.</small>
+    </div>
+    <div class="ch-cell ch-revol">
+      <strong>REVOLUTION</strong><br>
+      <small>Rapid and fundamental change of the whole business. Crisis-driven. Highest risk and disruption.</small>
+    </div>
+  </div>
+
+  <h3>Diagnosing the Change Context</h3>
+  <div class="grid-3">
+    <div class="card card-blue"><h4>Context of Change</h4><p>Assess: Time available, scope needed, diversity of stakeholders, capability for change, readiness for change.</p></div>
+    <div class="card card-green"><h4>Cultural Web</h4><p>Diagnose current culture vs desired culture. Identify what needs to change in paradigm, stories, rituals, symbols, power, structure, controls.</p></div>
+    <div class="card card-purple"><h4>Forcefield Analysis</h4><p>Identify <strong>driving forces</strong> (FOR change) and <strong>restraining forces</strong> (AGAINST change). Strengthen drivers; weaken restrainers.</p></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4>Transformational Leadership</h4>
+      <ul><li>Building a vision for the organization</li><li>Building org identity around collective values and beliefs</li><li>Energizing people to achieve the vision</li><li>Suitable for uncertain situations requiring fundamental change</li><li>Focus on 'soft' levers (culture, values, hearts and minds)</li></ul>
+    </div>
+    <div class="card card-orange">
+      <h4>Transactional Leadership</h4>
+      <ul><li>Focus on hard levers of change (systems and controls)</li><li>Emphasize changes in structures, targets, financial incentives</li><li>Project management and monitoring performance</li><li>Adjusting style to context (situational leadership)</li></ul>
+    </div>
+  </div>
+
+  <h3>Styles of Leading Change (Spectrum)</h3>
+  <div class="tbl-wrap">
+  <table class="tbl">
+    <tr><th>Style</th><th>Description</th><th>Best When</th></tr>
+    <tr><td><strong>Direction</strong></td><td>Leader makes most decisions about what and how to change; uses authority to direct</td><td>Crisis; urgent change needed; low capability/willingness</td></tr>
+    <tr><td><strong>Participation</strong></td><td>Leader retains coordination but delegates elements of the change process</td><td>Moderate capability; need some buy-in</td></tr>
+    <tr><td><strong>Collaboration</strong></td><td>Widespread involvement in decisions about BOTH what AND how to change</td><td>High capability; need commitment and ownership</td></tr>
+    <tr><td><strong>Persuasion</strong></td><td>Gain support for change by generating understanding and commitment</td><td>Change already decided; need to build understanding</td></tr>
+  </table>
+  </div>
+
+  <h3 id="lewin">Lewin's Three-Step Change Model</h3>
+  <div class="lewin">
+    <div class="lewin-step lewin-1">
+      <h4 style="color:#b91c1c;">① UNFREEZE</h4>
+      <p><em>Present Stage</em></p>
+      <p>Overcome resistance &amp; group conformity. Make driving forces stronger OR weaken/remove restraining forces. Create dissatisfaction with status quo. Question "why do we do it this way?"</p>
+    </div>
+    <div class="lewin-arr">→</div>
+    <div class="lewin-step lewin-2">
+      <h4 style="color:#1d4ed8;">② CHANGE (MOVE)</h4>
+      <p><em>Transition Stage</em></p>
+      <p>Implement the change process. Get employees actively involved. Provide new behaviors, skills, and capabilities. Move from old state to new state.</p>
+    </div>
+    <div class="lewin-arr">→</div>
+    <div class="lewin-step lewin-3">
+      <h4 style="color:#166534;">③ REFREEZE</h4>
+      <p><em>Desirable Stage</em></p>
+      <p>Stabilize the change. Balance driving and restraining forces. Introduce systems and conditions to reinforce and maintain new behaviors. Make change permanent.</p>
+    </div>
+  </div>
+
+  <h3 id="kotter">Kotter's 8-Step Process for Leading Change</h3>
+  <div class="kotter-grid">
+    <div class="kotter-step"><span class="snum">1</span>Establish a sense of <strong>Urgency</strong></div>
+    <div class="kotter-step"><span class="snum">2</span>Create a guiding <strong>Coalition</strong></div>
+    <div class="kotter-step"><span class="snum">3</span>Develop a <strong>Vision</strong> &amp; Strategy</div>
+    <div class="kotter-step"><span class="snum">4</span><strong>Communicate</strong> the change vision</div>
+    <div class="kotter-step"><span class="snum">5</span><strong>Empower</strong> broad-based action</div>
+    <div class="kotter-step"><span class="snum">6</span>Generate short-term <strong>Wins</strong></div>
+    <div class="kotter-step"><span class="snum">7</span>Consolidate gains, produce <strong>more change</strong></div>
+    <div class="kotter-step"><span class="snum">8</span><strong>Anchor</strong> new approaches in culture</div>
+  </div>
+
+  <div class="card card-navy">
+    <h3>Managing Change Programs</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Program Type</th><th>When to Use</th><th>Key Elements</th></tr>
+      <tr><td><strong>Turnaround Strategy (Reconstruction)</strong></td><td>Crisis; rapid decline; company survival at risk</td><td>Changing management, stabilizing crisis, gaining stakeholder support, defining target markets, refocusing &amp; financial restructuring</td></tr>
+      <tr><td><strong>Revolutionary Change</strong></td><td>Strategic drift has occurred; need fast and cultural change</td><td>Clear strategic direction, symbolic &amp; economic levers, external perspective, multiple change management styles, monitoring change</td></tr>
+      <tr><td><strong>Evolutionary Change</strong></td><td>Fundamental but gradual transformation; building capability</td><td>Empowered organization, clear strategic vision, continual change &amp; experimentation, irreversible changes, sustained top management commitment, winning hearts and minds</td></tr>
+    </table>
+    </div>
+  </div>
+  <div class="exam-tip">Change management questions often ask you to: (1) Diagnose the context, (2) Identify type of change (Balogun matrix), (3) Recommend leadership style, (4) Describe change program, (5) Apply Lewin or Kotter's model.</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ DELIBERATE vs EMERGENT -->
+<div class="section" id="delib-emerg">
+  <div class="section-header">
+    <span class="week-badge">KEY TOPIC</span>
+    <h2>Deliberate vs. Emergent Strategy</h2>
+  </div>
+  <div class="exam-tip">This is one of the MOST FREQUENTLY TESTED topics. It appears in almost every past paper in some form — especially for COVID-19 era questions and case study opening questions.</div>
+
+  <div class="de-table">
+    <div class="de-header">DELIBERATE STRATEGY</div>
+    <div class="de-header">EMERGENT STRATEGY</div>
+    <div class="de-cell"><span class="de-label">Definition</span>Planned, intentional strategy developed systematically before implementation. Top-down rational process.</div>
+    <div class="de-cell"><span class="de-label">Definition</span>Strategy that develops incrementally through learning, experimentation, and adaptation. Often unplanned.</div>
+    <div class="de-cell"><span class="de-label">Origin</span>Top management design; formal planning process</div>
+    <div class="de-cell"><span class="de-label">Origin</span>Emerges from actions of managers at all levels, responses to environmental changes, and learning</div>
+    <div class="de-cell"><span class="de-label">Nature</span>Rational, analytical, structured</div>
+    <div class="de-cell"><span class="de-label">Nature</span>Adaptive, responsive, organic</div>
+    <div class="de-cell"><span class="de-label">Best Environment</span>Stable, predictable environments</div>
+    <div class="de-cell"><span class="de-label">Best Environment</span>Turbulent, uncertain, fast-changing environments</div>
+    <div class="de-cell"><span class="de-label">Risk</span>May become rigid and fail to adapt (strategic drift)</div>
+    <div class="de-cell"><span class="de-label">Risk</span>May lack clear direction; can become chaotic</div>
+    <div class="de-cell"><span class="de-label">Example</span>A 5-year strategic plan developed by a consulting firm for JKH</div>
+    <div class="de-cell"><span class="de-label">Example</span>How M&amp;N bakery adapted to digital channels; how Kantala emerged from craft inspiration in Egypt; PickMe expanding to grocery delivery during COVID-19</div>
+    <div class="de-cell"><span class="de-label">COVID-19 Application</span>Deliberate plans became obsolete; needed rapid revision</div>
+    <div class="de-cell"><span class="de-label">COVID-19 Application</span>Emergent responses were critical for survival (e.g. PickMe grocery delivery, M&amp;N online ordering)</div>
+  </div>
+
+  <div class="card card-gold">
+    <h4>How to Answer "Emergent Strategy" Questions in Case Studies:</h4>
+    <ol>
+      <li>Identify the <strong>UNPLANNED actions or adaptations</strong> the company made in response to environmental changes</li>
+      <li>Show how these became part of the <strong>realized strategy</strong> (even though not originally intended)</li>
+      <li>Connect to examples: "Kantala originally emerged from visiting Egypt — this was an unplanned inspiration that became the foundation of their business model"</li>
+      <li>Contrast with what they planned vs what actually happened</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ MCQ GUIDE -->
+<div class="section" id="mcq">
+  <div class="section-header">
+    <span class="week-badge">EXAM PREP</span>
+    <h2>Full MCQ Answer Guide — Past Paper Analysis (2019–2024)</h2>
+  </div>
+  <p style="font-size:13px;margin-bottom:16px;">These patterns repeat across papers. Study these carefully before your exam.</p>
+
+  <div class="grid-2">
+    <div>
+      <div class="mcq-item"><div class="mcq-q">Strategy development as deliberate positioning through rational process</div><div class="mcq-a">✓ Strategy as Planning / Strategy as Design</div><div class="mcq-r">Deliberate, rational = Design/Planning lens</div></div>
+      <div class="mcq-item"><div class="mcq-q">Processes to collect and analyze market information to learn about customers, competitors, channels</div><div class="mcq-a">✓ Market Sensing</div><div class="mcq-r">Market sensing = systematic process of market info collection</div></div>
+      <div class="mcq-item"><div class="mcq-q">Actions needed to create a culture are not fully known</div><div class="mcq-a">✓ Causally Ambiguous</div><div class="mcq-r">Causal ambiguity = actions to create resource/capability NOT fully known</div></div>
+      <div class="mcq-item"><div class="mcq-q">Which is NOT a characteristic of CSR?</div><div class="mcq-a">✓ Aligning economic and legal responsibilities</div><div class="mcq-r">CSR aligns SOCIAL and economic, not economic and legal</div></div>
+      <div class="mcq-item"><div class="mcq-q">When low-cost supplier enters; differentiator's options EXCEPT</div><div class="mcq-a">✓ Undertake big moves in the marketplace</div><div class="mcq-r">Big moves are risky and predictable; series of small moves is correct</div></div>
+      <div class="mcq-item"><div class="mcq-q">Small innovative units from larger organizations</div><div class="mcq-a">✓ Spin-offs / Spin-outs</div><div class="mcq-r">Spin-offs = small innovative units generated from larger organizations</div></div>
+      <div class="mcq-item"><div class="mcq-q">Institutionalized learning in informal norms, values, social networks</div><div class="mcq-a">✓ Cultural Inertia</div><div class="mcq-r">Cultural inertia = informal norms/values resist change</div></div>
+      <div class="mcq-item"><div class="mcq-q">Middle managers' roles EXCEPT</div><div class="mcq-a">✓ Generating strategic options</div><div class="mcq-r">Middle managers: info source, sense-making, adjustment, champions — NOT top-level strategic option generation</div></div>
+      <div class="mcq-item"><div class="mcq-q">Seeking data that confirms a decision already made</div><div class="mcq-a">✓ Confirmation Bias</div><div class="mcq-r">Confirmation bias = seeking confirming data for pre-decided choice</div></div>
+      <div class="mcq-item"><div class="mcq-q">Change implemented in series of steps to align organization's operations</div><div class="mcq-a">✓ Evolution / Reconstruction</div><div class="mcq-r">Evolution = gradual transformational; Reconstruction = rapid realignment</div></div>
+    </div>
+    <div>
+      <div class="mcq-item"><div class="mcq-q">Strategy as emergence of order and innovation from variety and diversity</div><div class="mcq-a">✓ Strategy as Ideas</div><div class="mcq-r">Ideas lens = strategy emerges from variety/diversity</div></div>
+      <div class="mcq-item"><div class="mcq-q">NOT a characteristic of strategic drift</div><div class="mcq-a">✓ Flexibility in organizational activities</div><div class="mcq-r">Strategic drift = RIGIDITY, not flexibility. Phase II has rigidity.</div></div>
+      <div class="mcq-item"><div class="mcq-q">Which belongs to responsive CSR (NOT strategic)?</div><div class="mcq-a">✓ Good citizenship activities</div><div class="mcq-r">Good citizenship = responsive CSR (not strategic CSR)</div></div>
+      <div class="mcq-item"><div class="mcq-q">Strategy that standardizes products while securing efficiency in global operations</div><div class="mcq-a">✓ Global Strategy</div><div class="mcq-r">Global strategy = standardization for global efficiency</div></div>
+      <div class="mcq-item"><div class="mcq-q">Separate unit for innovative projects in large company</div><div class="mcq-a">✓ Corporate Venture</div><div class="mcq-r">Corporate venturing = separate innovative unit</div></div>
+      <div class="mcq-item"><div class="mcq-q">Highly bureaucratic, demand control, specialized, decentralized DM</div><div class="mcq-a">✓ Professional Organization</div><div class="mcq-r">Professionals with autonomy = professional organization</div></div>
+      <div class="mcq-item"><div class="mcq-q">Indirect control of inputs</div><div class="mcq-a">✓ Cultural Systems</div><div class="mcq-r">Cultural systems = indirect control through norms (self-control)</div></div>
+      <div class="mcq-item"><div class="mcq-q">Manager strongly tied to one piece of information in decision making</div><div class="mcq-a">✓ Anchoring Bias</div><div class="mcq-r">Anchoring = tied to one piece of information (first number/fact anchors all decisions)</div></div>
+      <div class="mcq-item"><div class="mcq-q">NOT a characteristic of strategic decisions</div><div class="mcq-a">✓ Scope of business unit's activities</div><div class="mcq-r">Strategic decisions concern the ORGANIZATION scope, not just business unit</div></div>
+      <div class="mcq-item"><div class="mcq-q">Strategy as the product of individual experience and organizational culture</div><div class="mcq-a">✓ Experience Lens</div><div class="mcq-r">Experience lens = strategy shaped by individual experience + culture</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ EXAM FRAMEWORKS -->
+<div class="section" id="exam-frameworks">
+  <div class="section-header">
+    <span class="week-badge">EXAM PREP</span>
+    <h2>Exam Question Answer Frameworks</h2>
+  </div>
+  <p style="font-size:13px;margin-bottom:16px;">Use these structured approaches for common question types. Always define key terms first and link every point to the case study.</p>
+
+  <div class="af-box">
+    <h4>A. Organizational Culture &amp; Strategy Execution</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text">Define culture: values, norms, artifacts. Mention cultural web elements (stories, rituals, symbols, power, structure, control, paradigm)</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text">How culture <strong>PROMOTES</strong> execution: shared values, peer pressure to conform, clear guidance on behaviour, shared understanding</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text">How culture can be a <strong>BARRIER</strong>: conflict between old culture and new strategy, cultural inertia, resistance to change in dynamic environments</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text">Apply to case: Which cultural web elements are relevant? Are they aligned or misaligned with strategy? Give specific evidence from case.</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>B. Strategic Growth Directions (Ansoff + SAF)</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text">Identify CURRENT directions: cite Ansoff quadrants with evidence from the case (e.g., "M&amp;N entering India = market development")</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text">Propose TWO OR THREE FUTURE directions (must be different from current; justify WHY each suits the company)</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text">Apply SAF to choose the OPTIMAL one: which is most Suitable (environment + capabilities)? Acceptable (risk/return/stakeholders)? Feasible (resources)?</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text">State recommendation clearly: "The optimal choice is X because it scores highest on Suitability (…), Acceptability (…) and Feasibility (…)"</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>C. Porter's Five Forces Industry Analysis</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text">Choose an industry (or use the one in the case). Name and briefly define the Five Forces model.</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text">For EACH of the 5 forces: Name it → Assess its strength (high/moderate/low) → Justify with 2–3 specific factors from that industry</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text">Give overall verdict: Is the industry attractive or unattractive for earning profits? State clearly.</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text">Identify strategic implications: What should companies in this industry do given this analysis? (positioning, anticipating, shaping)</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>D. RBV / Strategic Capabilities Assessment</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text">Identify key resources and capabilities of the organization from the case (tangible and intangible)</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text">Apply VRIO to each: Is it Valuable? Rare? Inimitable (how — path dep., causal ambiguity, social complexity)? Organized?</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text">Classify: Threshold capability (meets parity) vs Core competence (competitive advantage)</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text">Connect to competitive advantage: Which capabilities underpin the firm's strategic position?</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>E. Strategic Change Program</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text">Diagnose context: What type of change is needed? (Adaptation/Evolution/Reconstruction/Revolution?) Use Balogun matrix.</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text">Diagnose using Cultural Web and Forcefield Analysis: What are the driving and restraining forces?</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text">Choose leadership style: Transformational or Transactional? Direction/Participation/Collaboration/Persuasion?</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text">Describe the change program: Turnaround / Revolutionary / Evolutionary?</div></div>
+    <div class="af-step"><div class="af-num">5</div><div class="af-text">Apply Lewin's model: Unfreeze (how?) → Change (what actions?) → Refreeze (what systems to embed change?)</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>F. Value Chain Design for Specific Strategy</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text"><strong>Cost Leadership Value Chain:</strong> Inbound (near suppliers, efficient inventory) → Operations (tech to reduce cost, org learning) → Outbound (low-cost transport, efficient order sizes) → Marketing (mass scale, price to sell volume) → Service (outsource, efficient installation) → Support: simplified management, cost-effective tech, procurement at lowest cost</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text"><strong>Differentiation Value Chain:</strong> Identify WHERE uniqueness is created — R&amp;D/design, premium procurement, skilled HRM, brand marketing, exceptional service — and justify how each justifies premium price</div></div>
+  </div>
+
+  <div class="af-box">
+    <h4>G. Balanced Scorecard Design + Strategy Map</h4>
+    <div class="af-step"><div class="af-num">1</div><div class="af-text"><strong>Financial Perspective:</strong> Define 2–3 KPIs (e.g., revenue growth %, ROCE, profit margin, EPS)</div></div>
+    <div class="af-step"><div class="af-num">2</div><div class="af-text"><strong>Customer Perspective:</strong> Define 2–3 KPIs (e.g., customer satisfaction score, market share, retention rate, NPS)</div></div>
+    <div class="af-step"><div class="af-num">3</div><div class="af-text"><strong>Internal Process Perspective:</strong> Define 2–3 KPIs (e.g., efficiency ratio, quality defect rate, innovation pipeline, order fulfillment time)</div></div>
+    <div class="af-step"><div class="af-num">4</div><div class="af-text"><strong>Learning &amp; Growth Perspective:</strong> Define 2–3 KPIs (e.g., employee training hours, R&amp;D spend, staff satisfaction score)</div></div>
+    <div class="af-step"><div class="af-num">5</div><div class="af-text"><strong>Strategy Map:</strong> Draw causal links: L&amp;G → Internal Processes → Customer → Financial. "Better trained employees (L&amp;G) → more efficient operations (Internal) → higher customer satisfaction (Customer) → increased revenue (Financial)"</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ KEY DEFINITIONS -->
+<div class="section" id="keydefs">
+  <div class="section-header">
+    <span class="week-badge">EXAM PREP</span>
+    <h2>Key Definitions — Use These in Your Answers</h2>
+  </div>
+  <p style="font-size:13px;margin-bottom:14px;">Always define key terms at the start of your answer. These are the exact definitions your examiners expect.</p>
+
+  <div class="def-item"><div class="def-term">Strategy</div><div class="def-def">The direction and scope of an organization over the long term, which achieves advantage in a changing environment through its configuration of resources and competences with the aim of fulfilling stakeholder expectations.</div><div class="def-src">Johnson et al (2008)</div></div>
+  <div class="def-item"><div class="def-term">Strategic Management</div><div class="def-def">The art and science of formulating, implementing, and evaluating cross-functional decisions that enable an organization to achieve its objectives.</div><div class="def-src">David (2009)</div></div>
+  <div class="def-item"><div class="def-term">Competitive Advantage</div><div class="def-def">When a firm creates greater value for users than the costs of supplying them AND that value is superior to that of rival SBUs.</div></div>
+  <div class="def-item"><div class="def-term">Core Competence</div><div class="def-def">A linked set of skills, activities and resources that together: (1) deliver customer value, (2) differentiate from competitors, and (3) can be extended and developed.</div></div>
+  <div class="def-item"><div class="def-term">Dynamic Capability</div><div class="def-def">Organization's ability to renew and recreate its strategic capabilities to meet the needs of changing environments. (Sensing, Seizing, Reconfiguring)</div></div>
+  <div class="def-item"><div class="def-term">Strategic Drift</div><div class="def-def">The tendency for strategies to develop incrementally on the basis of historical and cultural influences but fail to keep pace with a changing environment.</div><div class="def-src">Johnson et al (2008)</div></div>
+  <div class="def-item"><div class="def-term">Path Dependency</div><div class="def-def">Where early events and decisions establish policy paths that have lasting effects on subsequent events and decisions.</div><div class="def-src">Johnson et al (2008)</div></div>
+  <div class="def-item"><div class="def-term">Cultural Web</div><div class="def-def">Shows the behavioral, physical, and symbolic manifestations of a culture that inform and are informed by the taken-for-granted assumptions (paradigm).</div></div>
+  <div class="def-item"><div class="def-term">CSR (Carroll, 1979)</div><div class="def-def">The economic, legal, ethical, and discretionary (philanthropic) expectations that society has of organizations at a given point in time.</div></div>
+  <div class="def-item"><div class="def-term">Strategic Alliance</div><div class="def-def">Where two or more organizations share resources and activities to pursue a common strategy.</div></div>
+  <div class="def-item"><div class="def-term">Emergent Strategy</div><div class="def-def">Strategy that develops incrementally through actions, learning, and responses to the environment; not fully planned in advance.</div></div>
+  <div class="def-item"><div class="def-term">Deliberate Strategy</div><div class="def-def">A planned, intentional strategy developed systematically through formal analysis and rational decision-making before implementation.</div></div>
+  <div class="def-item"><div class="def-term">Spin-offs / Spin-outs</div><div class="def-def">The generation of small innovative units from larger organizations.</div></div>
+  <div class="def-item"><div class="def-term">Corporate Venturing</div><div class="def-def">Investing externally in new ventures, thereby protecting early-stage ventures from internal bureaucracy and spreading risk.</div></div>
+  <div class="def-item"><div class="def-term">Strategic Group</div><div class="def-def">Organizations within an industry or sector with similar strategic characteristics, following similar strategies or competing on similar bases.</div></div>
+  <div class="def-item"><div class="def-term">Market Sensing</div><div class="def-def">The processes developed to collect and analyze market information to learn about customers, competitors, and channel members.</div></div>
+  <div class="def-item"><div class="def-term">Cultural Inertia</div><div class="def-def">Institutionalized learning and common expectations manifest in the informal norms, values, and social networks that resist organizational change.</div></div>
+  <div class="def-item"><div class="def-term">Structural Inertia</div><div class="def-def">Resistance to change rooted in the size, complexity, and interdependence in the organization's structures, systems, and formal processes.</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════════ FINAL ADVICE -->
+<div class="section" id="finaladvice">
+  <div class="section-header">
+    <span class="week-badge">FINAL PREP</span>
+    <h2>Final Exam Advice — 3-Hour Strategy for Success</h2>
+  </div>
+
+  <div class="advice-grid">
+    <div class="advice-box" style="background:var(--lbl);border-color:var(--blue);">
+      <h4 style="color:var(--blue);">Part A — MCQ (10 marks, ~15 min)</h4>
+      <ul><li>Read ALL options carefully before choosing</li><li>Watch for <strong>"NOT"</strong> questions — very common trap</li><li>Use elimination: cross out obviously wrong options</li><li>Common traps: CSR characteristics, strategy lens definitions, types of inertia, drift phases</li><li>If unsure, eliminate 2 wrong options first, then choose</li></ul>
+    </div>
+    <div class="advice-box" style="background:var(--lgreen);border-color:#16a34a;">
+      <h4 style="color:var(--green);">Part B — Case Study (~24 marks, ~70 min)</h4>
+      <ul><li><strong>Read the case TWICE</strong> before answering any question</li><li>Underline key facts, company actions, environmental changes</li><li>Link every answer back to the case with specific evidence</li><li>Use frameworks by NAME (value chain, cultural web, Ansoff, SAF)</li><li>Draw diagrams where possible (Ansoff, value chain, BSC)</li><li>Allocate time per mark: ~3 min per mark</li></ul>
+    </div>
+    <div class="advice-box" style="background:var(--lpurple);border-color:#7c3aed;">
+      <h4 style="color:#5b21b6;">Part C — Essays (choose 2 of 3, ~13 marks each, ~35 min each)</h4>
+      <ul><li>Read all 3 questions FIRST, then choose the 2 you know best</li><li>Structure your answer BEFORE writing: intro → body → conclusion</li><li>Use theory + application + local examples</li><li>Include definitions, models, and real Sri Lankan business examples</li><li>Never leave a Part C question blank — partial answers get partial marks</li></ul>
+    </div>
+    <div class="advice-box" style="background:#fffbeb;border-color:var(--gold);">
+      <h4 style="color:#92400e;">⭐ Golden Rules</h4>
+      <ul><li>Always define key terms at the start of each answer</li><li>For models, DRAW THEM when possible (Ansoff, value chain, BSC, Five Forces)</li><li>Connect answers to Sri Lankan examples from the case AND your own knowledge</li><li>Theory alone = 60%. Theory + application + examples = 90%+</li><li>Time allocation: MCQ 15 min · Part B 70 min · Part C 70 min (35 each) · review 5 min</li></ul>
+    </div>
+  </div>
+
+  <div class="card card-navy" style="margin-top:16px;">
+    <h4>Most Likely Exam Topics (Based on Past Paper Patterns)</h4>
+    <div class="grid-2">
+      <ul>
+        <li>Case study compulsory: culture + capabilities + growth directions + SAF</li>
+        <li>PEST + Scenarios (almost every year)</li>
+        <li>Porter's Five Forces — identify attractiveness</li>
+        <li>Value chain + specific competitive strategy</li>
+        <li>Cultural web + strategy execution</li>
+      </ul>
+      <ul>
+        <li>Corporate level strategies (Ansoff) + future strategies with SAF</li>
+        <li>Retrenchment strategy during economic crisis</li>
+        <li>Balanced Scorecard design + strategy map</li>
+        <li>Innovation dilemmas (at least once per recent paper)</li>
+        <li>Strategic change types + Lewin's model + Kotter's 8-step</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:28px 20px;color:#9ca3af;font-size:12px;border-top:2px solid var(--border);margin:0 16px;">
+  <p>MGT 6301 – Strategic Management | University of Peradeniya, Postgraduate Unit</p>
+  <p style="margin-top:5px;">Complete Study Notes — Weeks 1–15 | Based on Lecture Materials + Past Papers 2019–2024</p>
+  <p style="margin-top:8px;font-size:14px;">Good luck on your exam! You've got this! 🎓</p>
+  <p style="margin-top:10px;"><a href="#top" style="color:var(--blue);">↑ Back to Top</a> &nbsp;|&nbsp; <a href="#qr" style="color:var(--blue);">⭐ Quick Revision</a></p>
+</div>
+
+</body>
+</html>
